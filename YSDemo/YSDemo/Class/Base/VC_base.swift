@@ -7,6 +7,8 @@
 
 class VC_base: YSBaseVC {
     
+    private(set) lazy var disposeBag: DisposeBag = DisposeBag()
+    
     override func viewDidLoad(firstTime: Bool) {
         super.viewDidLoad(firstTime: firstTime)
         setupUI()

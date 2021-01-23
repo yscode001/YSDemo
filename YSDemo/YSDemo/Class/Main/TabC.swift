@@ -10,6 +10,7 @@ class TabC: UITabBarController {
     private lazy var ukMainVC:VC_uk_main = VC_uk_main()
     private lazy var skMainVC:VC_sk_main = VC_sk_main()
     private lazy var scnMainVC:VC_scn_main = VC_scn_main()
+    private lazy var mvMainVC:VC_mv_main = VC_mv_main()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class TabC: UITabBarController {
         addChildVC(title: "UIKit", iconImgName: "tabbar_home", chindVC: ukMainVC)
         addChildVC(title: "SpriteKit", iconImgName: "tabbar_msg", chindVC: skMainVC)
         addChildVC(title: "SceneKit", iconImgName: "tabbar_data", chindVC: scnMainVC)
+        addChildVC(title: "三方功能库", iconImgName: "tabbar_profile", chindVC: mvMainVC)
     }
     
     private func addChildVC(title: String, iconImgName: String, chindVC: UIViewController){
