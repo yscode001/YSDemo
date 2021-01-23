@@ -1,0 +1,27 @@
+platform :ios, '10.0'
+
+use_frameworks!
+
+target 'YSDemo' do
+  
+  # 开发常用库
+  pod 'SDWebImage', '5.10.2'
+  pod 'SnapKit', '5.0.1'
+  pod 'MJRefresh', '3.5.0'
+  pod 'SVProgressHUD', '2.2.5'
+  pod 'SwiftyJSON', '5.0.0'
+  
+  # 网络传输
+  pod 'Alamofire', '5.4.1'
+  pod 'Socket.IO-Client-Swift', '15.2.0'
+  
+  # Rx
+  pod 'RxSwift', '6.0.0'
+  pod 'RxCocoa', '6.0.0'
+  pod 'RxDataSources', '5.0.0'
+  
+  # YSKit
+  pod 'YSKit', :path => 'LocalPods/YSKit'
+  pod 'YSVendor', :path => 'LocalPods/YSVendor'
+  
+end
