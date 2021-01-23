@@ -8,6 +8,8 @@
 class Tool_print{
     
     class func print(_ items: Any...){
-        Swift.print(items)
+        if AppTag.isDevelop{
+            Swift.print(items)
+        }
     }
 }

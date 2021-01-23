@@ -42,6 +42,9 @@
 		31A92FF425BC3490003AC351 /* M_uk_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A92FF325BC3490003AC351 /* M_uk_main.swift */; };
 		31A92FFA25BC357B003AC351 /* Cell_uk_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A92FF925BC357B003AC351 /* Cell_uk_main.swift */; };
 		31A9300025BC360B003AC351 /* CellID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A92FFF25BC360B003AC351 /* CellID.swift */; };
+		31A9300325BC386F003AC351 /* Type_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9300225BC386F003AC351 /* Type_custom.swift */; };
+		31A9300625BC3882003AC351 /* Type_environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9300525BC3882003AC351 /* Type_environment.swift */; };
+		31A9300925BC3957003AC351 /* AppTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9300825BC3957003AC351 /* AppTag.swift */; };
 		871971FA5EC69686BA3DA230 /* Pods_YSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8681F74E26A25A12E139250 /* Pods_YSDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +88,9 @@
 		31A92FF325BC3490003AC351 /* M_uk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M_uk_main.swift; sourceTree = "<group>"; };
 		31A92FF925BC357B003AC351 /* Cell_uk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell_uk_main.swift; sourceTree = "<group>"; };
 		31A92FFF25BC360B003AC351 /* CellID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellID.swift; sourceTree = "<group>"; };
+		31A9300225BC386F003AC351 /* Type_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type_custom.swift; sourceTree = "<group>"; };
+		31A9300525BC3882003AC351 /* Type_environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type_environment.swift; sourceTree = "<group>"; };
+		31A9300825BC3957003AC351 /* AppTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTag.swift; sourceTree = "<group>"; };
 		3FA57CA9FE3DE8F226E2598B /* Pods-YSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSDemo.debug.xcconfig"; path = "Target Support Files/Pods-YSDemo/Pods-YSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B8681F74E26A25A12E139250 /* Pods_YSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -374,8 +380,11 @@
 		318BCDE925BC008500E61A70 /* Const */ = {
 			isa = PBXGroup;
 			children = (
-				318BCDEA25BC009100E61A70 /* Color.swift */,
+				31A9300825BC3957003AC351 /* AppTag.swift */,
 				31A92FFF25BC360B003AC351 /* CellID.swift */,
+				318BCDEA25BC009100E61A70 /* Color.swift */,
+				31A9300225BC386F003AC351 /* Type_custom.swift */,
+				31A9300525BC3882003AC351 /* Type_environment.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
@@ -540,6 +549,7 @@
 				3125F54C25BC1ECD00F677AE /* NetworkRequestObject.swift in Sources */,
 				318BCDCA25BBFFD400E61A70 /* VC_login.swift in Sources */,
 				3125F54D25BC1ECD00F677AE /* NetworkServerCode.swift in Sources */,
+				31A9300625BC3882003AC351 /* Type_environment.swift in Sources */,
 				31A92FEF25BC3468003AC351 /* VM_uk_main.swift in Sources */,
 				31A9300025BC360B003AC351 /* CellID.swift in Sources */,
 				318BCD6C25BBF26700E61A70 /* AppDelegate.swift in Sources */,
@@ -553,11 +563,13 @@
 				315AFE3E25BC339D007A8E63 /* VC_mv_main.swift in Sources */,
 				318BCDEB25BC009100E61A70 /* Color.swift in Sources */,
 				3125F54525BC1ECD00F677AE /* UITextView+font.swift in Sources */,
+				31A9300325BC386F003AC351 /* Type_custom.swift in Sources */,
 				31A92FF425BC3490003AC351 /* M_uk_main.swift in Sources */,
 				318BCD9125BBF31100E61A70 /* TabC.swift in Sources */,
 				3125F54825BC1ECD00F677AE /* NetworkManager.swift in Sources */,
 				3125F54425BC1ECD00F677AE /* UIFont+ext.swift in Sources */,
 				3125F54E25BC1ECD00F677AE /* CurrentUser.swift in Sources */,
+				31A9300925BC3957003AC351 /* AppTag.swift in Sources */,
 				318BCDC525BBFF8B00E61A70 /* VC_base.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
