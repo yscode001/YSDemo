@@ -1,15 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "nav_back.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "cp_green@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "cp_green@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "nav_back.pdf",
+      "filename" : "sk_player.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "sk_player@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

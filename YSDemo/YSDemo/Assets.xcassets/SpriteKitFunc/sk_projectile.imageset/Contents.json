@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "nav_back.pdf",
+      "filename" : "sk_projectile.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "sk_projectile@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
