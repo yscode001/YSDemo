@@ -45,6 +45,7 @@
 		31A9300325BC386F003AC351 /* Type_custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9300225BC386F003AC351 /* Type_custom.swift */; };
 		31A9300625BC3882003AC351 /* Type_environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9300525BC3882003AC351 /* Type_environment.swift */; };
 		31A9300925BC3957003AC351 /* AppTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9300825BC3957003AC351 /* AppTag.swift */; };
+		31AAEA6E25BC3A66000F19B5 /* VendorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AAEA6D25BC3A66000F19B5 /* VendorConfig.swift */; };
 		871971FA5EC69686BA3DA230 /* Pods_YSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8681F74E26A25A12E139250 /* Pods_YSDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		31A9300225BC386F003AC351 /* Type_custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type_custom.swift; sourceTree = "<group>"; };
 		31A9300525BC3882003AC351 /* Type_environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type_environment.swift; sourceTree = "<group>"; };
 		31A9300825BC3957003AC351 /* AppTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTag.swift; sourceTree = "<group>"; };
+		31AAEA6D25BC3A66000F19B5 /* VendorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorConfig.swift; sourceTree = "<group>"; };
 		3FA57CA9FE3DE8F226E2598B /* Pods-YSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSDemo.debug.xcconfig"; path = "Target Support Files/Pods-YSDemo/Pods-YSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B8681F74E26A25A12E139250 /* Pods_YSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -385,6 +387,7 @@
 				318BCDEA25BC009100E61A70 /* Color.swift */,
 				31A9300225BC386F003AC351 /* Type_custom.swift */,
 				31A9300525BC3882003AC351 /* Type_environment.swift */,
+				31AAEA6D25BC3A66000F19B5 /* VendorConfig.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3125F54325BC1ECD00F677AE /* UITextField+font.swift in Sources */,
+				31AAEA6E25BC3A66000F19B5 /* VendorConfig.swift in Sources */,
 				318BCDF125BC02E200E61A70 /* Tool_print.swift in Sources */,
 				3125F54625BC1ECD00F677AE /* UILabel+font.swift in Sources */,
 				318BCDC025BBFF0E00E61A70 /* VC_scn_main.swift in Sources */,
