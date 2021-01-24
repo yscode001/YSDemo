@@ -53,6 +53,8 @@
 		31A9300625BC3882003AC351 /* Type_environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9300525BC3882003AC351 /* Type_environment.swift */; };
 		31A9300925BC3957003AC351 /* AppTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A9300825BC3957003AC351 /* AppTag.swift */; };
 		31AAEA6E25BC3A66000F19B5 /* VendorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AAEA6D25BC3A66000F19B5 /* VendorConfig.swift */; };
+		31F2282E25BD9BBC0034FD11 /* VC_uk_physics_attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F2282D25BD9BBC0034FD11 /* VC_uk_physics_attachment.swift */; };
+		31F2283225BD9D200034FD11 /* VC_uk_physics_collision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F2283125BD9D200034FD11 /* VC_uk_physics_collision.swift */; };
 		871971FA5EC69686BA3DA230 /* Pods_YSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8681F74E26A25A12E139250 /* Pods_YSDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +109,8 @@
 		31A9300525BC3882003AC351 /* Type_environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type_environment.swift; sourceTree = "<group>"; };
 		31A9300825BC3957003AC351 /* AppTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTag.swift; sourceTree = "<group>"; };
 		31AAEA6D25BC3A66000F19B5 /* VendorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorConfig.swift; sourceTree = "<group>"; };
+		31F2282D25BD9BBC0034FD11 /* VC_uk_physics_attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_uk_physics_attachment.swift; sourceTree = "<group>"; };
+		31F2283125BD9D200034FD11 /* VC_uk_physics_collision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_uk_physics_collision.swift; sourceTree = "<group>"; };
 		3FA57CA9FE3DE8F226E2598B /* Pods-YSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSDemo.debug.xcconfig"; path = "Target Support Files/Pods-YSDemo/Pods-YSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B8681F74E26A25A12E139250 /* Pods_YSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -371,6 +375,8 @@
 			children = (
 				318BCDB825BBFEF700E61A70 /* VC_uk_main.swift */,
 				31013BC725BD6BB1007434B9 /* VC_uk_mask_findGirl.swift */,
+				31F2282D25BD9BBC0034FD11 /* VC_uk_physics_attachment.swift */,
+				31F2283125BD9D200034FD11 /* VC_uk_physics_collision.swift */,
 				31013BCB25BD6DE3007434B9 /* VC_uk_physics_gravicy.swift */,
 				317AD94A25BD818600D398AF /* VC_uk_physics_push.swift */,
 				31013BDD25BD7DFD007434B9 /* VC_uk_physics_snap.swift */,
@@ -611,6 +617,8 @@
 				318BCDEB25BC009100E61A70 /* Color.swift in Sources */,
 				3125F54525BC1ECD00F677AE /* UITextView+font.swift in Sources */,
 				31A9300325BC386F003AC351 /* Type_custom.swift in Sources */,
+				31F2283225BD9D200034FD11 /* VC_uk_physics_collision.swift in Sources */,
+				31F2282E25BD9BBC0034FD11 /* VC_uk_physics_attachment.swift in Sources */,
 				31A92FF425BC3490003AC351 /* M_uk_main.swift in Sources */,
 				318BCD9125BBF31100E61A70 /* TabC.swift in Sources */,
 				31013BDE25BD7DFD007434B9 /* VC_uk_physics_snap.swift in Sources */,
