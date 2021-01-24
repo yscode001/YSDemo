@@ -27,7 +27,13 @@ extension SKScene_scale{
     
     private func move_only(){
         // 移动了xxx距离
-        let act = SKAction.moveBy(x: 100, y: 500, duration: 2)
+        // let act = SKAction.moveBy(x: 100, y: 100, duration: 2) // 注意：起点是当前点，而不是最初点
+        let act = SKAction.move(by: CGVector(dx: 100, dy: 100), duration: 2) // 同上，vector是x，y的集合
+        
+        // 移动到xxx
+        // let act = SKAction.moveTo(x: 100, duration: 2) // 水平移动，如果当前点==目标点，不移动
+        // let act = SKAction.moveTo(y: 500, duration: 2) // 垂直移动，如果当前点==目标点，不移动
+        // let act = SKAction.move(to: CGPoint(x: 200, y: 500), duration: 2) // 指定点移动，如果当前点==目标点，不移动
         node.run(act)
     }
     
