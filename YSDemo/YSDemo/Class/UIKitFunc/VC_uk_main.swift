@@ -43,6 +43,8 @@ class VC_uk_main: VC_base {
                 self.ys.push(VC_uk_physics_gravity(), animated: true)
             case "id1-2":
                 self.ys.push(VC_uk_physics_snap(), animated: true)
+            case "id1-3":
+                self.ys.push(VC_uk_physics_push(), animated: true)
             case "id2-1":
                 self.ys.push(VC_uk_mask_findGirl(), animated: true)
             default:

@@ -33,6 +33,7 @@
 		3125F58C25BC239400F677AE /* sk_bg.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3125F58A25BC239400F677AE /* sk_bg.caf */; };
 		3125F59025BC23B300F677AE /* plane.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3125F58F25BC23B300F677AE /* plane.atlas */; };
 		315AFE3E25BC339D007A8E63 /* VC_mv_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315AFE3D25BC339D007A8E63 /* VC_mv_main.swift */; };
+		317AD94B25BD818600D398AF /* VC_uk_physics_push.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317AD94A25BD818600D398AF /* VC_uk_physics_push.swift */; };
 		318BCD6C25BBF26700E61A70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCD6B25BBF26700E61A70 /* AppDelegate.swift */; };
 		318BCD7525BBF26800E61A70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318BCD7425BBF26800E61A70 /* Assets.xcassets */; };
 		318BCD7825BBF26800E61A70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318BCD7625BBF26800E61A70 /* LaunchScreen.storyboard */; };
@@ -83,6 +84,7 @@
 		3125F58A25BC239400F677AE /* sk_bg.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sk_bg.caf; sourceTree = "<group>"; };
 		3125F58F25BC23B300F677AE /* plane.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = plane.atlas; sourceTree = "<group>"; };
 		315AFE3D25BC339D007A8E63 /* VC_mv_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_mv_main.swift; sourceTree = "<group>"; };
+		317AD94A25BD818600D398AF /* VC_uk_physics_push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_uk_physics_push.swift; sourceTree = "<group>"; };
 		318BCD6825BBF26700E61A70 /* YSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		318BCD6B25BBF26700E61A70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		318BCD7425BBF26800E61A70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				318BCDB825BBFEF700E61A70 /* VC_uk_main.swift */,
 				31013BC725BD6BB1007434B9 /* VC_uk_mask_findGirl.swift */,
 				31013BCB25BD6DE3007434B9 /* VC_uk_physics_gravicy.swift */,
+				317AD94A25BD818600D398AF /* VC_uk_physics_push.swift */,
 				31013BDD25BD7DFD007434B9 /* VC_uk_physics_snap.swift */,
 				31A92FF825BC356E003AC351 /* Cell */,
 				31A92FF225BC3482003AC351 /* Model */,
@@ -598,6 +601,7 @@
 				318BCDBD25BBFF0400E61A70 /* VC_sk_main.swift in Sources */,
 				318BCDB925BBFEF700E61A70 /* VC_uk_main.swift in Sources */,
 				31A92FFA25BC357B003AC351 /* Cell_uk_main.swift in Sources */,
+				317AD94B25BD818600D398AF /* VC_uk_physics_push.swift in Sources */,
 				31013BC825BD6BB2007434B9 /* VC_uk_mask_findGirl.swift in Sources */,
 				31013BDA25BD713A007434B9 /* M_sk_main.swift in Sources */,
 				3125F54A25BC1ECD00F677AE /* NetworkHelper.swift in Sources */,
