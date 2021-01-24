@@ -36,13 +36,13 @@ class VC_sk_main: VC_base {
         }
         vm.list.bind(to: tbv.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         
-        tbv.rx.modelSelected(M_uk_main.self).bind(onNext: { [weak self] (element) in
+        tbv.rx.modelSelected(M_sk_main.self).bind(onNext: { [weak self] (element) in
             guard let `self` = self else{ return }
             switch element.identifier{
             case "id1-1":
-                self.ys.push(VC_uk_physics_gravity(), animated: true)
-            case "id2-2":
-                self.ys.push(VC_uk_mask_findGirl(), animated: true)
+                self.ys.push(VC_sk_action(scene: SKScene_scale()), animated: true)
+            case "id1-2":
+                self.ys.push(VC_sk_action(scene: SKScene_textureAtlas()), animated: true)
             default:
                 break
             }

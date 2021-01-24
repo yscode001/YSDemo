@@ -55,6 +55,9 @@
 		31AAEA6E25BC3A66000F19B5 /* VendorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AAEA6D25BC3A66000F19B5 /* VendorConfig.swift */; };
 		31F2282E25BD9BBC0034FD11 /* VC_uk_physics_attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F2282D25BD9BBC0034FD11 /* VC_uk_physics_attachment.swift */; };
 		31F2283225BD9D200034FD11 /* VC_uk_physics_collision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F2283125BD9D200034FD11 /* VC_uk_physics_collision.swift */; };
+		31F2283D25BDA2460034FD11 /* VC_sk_action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F2283C25BDA2460034FD11 /* VC_sk_action.swift */; };
+		31F2284225BDA3080034FD11 /* SKScene_scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F2284125BDA3080034FD11 /* SKScene_scale.swift */; };
+		31F2284525BDA3150034FD11 /* SKScene_textureAtlas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F2284425BDA3150034FD11 /* SKScene_textureAtlas.swift */; };
 		871971FA5EC69686BA3DA230 /* Pods_YSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8681F74E26A25A12E139250 /* Pods_YSDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +114,9 @@
 		31AAEA6D25BC3A66000F19B5 /* VendorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorConfig.swift; sourceTree = "<group>"; };
 		31F2282D25BD9BBC0034FD11 /* VC_uk_physics_attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_uk_physics_attachment.swift; sourceTree = "<group>"; };
 		31F2283125BD9D200034FD11 /* VC_uk_physics_collision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_uk_physics_collision.swift; sourceTree = "<group>"; };
+		31F2283C25BDA2460034FD11 /* VC_sk_action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_sk_action.swift; sourceTree = "<group>"; };
+		31F2284125BDA3080034FD11 /* SKScene_scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScene_scale.swift; sourceTree = "<group>"; };
+		31F2284425BDA3150034FD11 /* SKScene_textureAtlas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScene_textureAtlas.swift; sourceTree = "<group>"; };
 		3FA57CA9FE3DE8F226E2598B /* Pods-YSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSDemo.debug.xcconfig"; path = "Target Support Files/Pods-YSDemo/Pods-YSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B8681F74E26A25A12E139250 /* Pods_YSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -390,9 +396,11 @@
 		318BCDB625BBFEC100E61A70 /* SpriteKitFunc */ = {
 			isa = PBXGroup;
 			children = (
+				31F2283C25BDA2460034FD11 /* VC_sk_action.swift */,
 				318BCDBC25BBFF0400E61A70 /* VC_sk_main.swift */,
 				31013BD125BD711A007434B9 /* Cell */,
 				31013BCF25BD7108007434B9 /* Model */,
+				31F2284025BDA2F60034FD11 /* Scene */,
 				31013BD025BD710F007434B9 /* ViewModel */,
 			);
 			path = SpriteKitFunc;
@@ -465,6 +473,15 @@
 				31A92FF925BC357B003AC351 /* Cell_uk_main.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		31F2284025BDA2F60034FD11 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				31F2284125BDA3080034FD11 /* SKScene_scale.swift */,
+				31F2284425BDA3150034FD11 /* SKScene_textureAtlas.swift */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -593,6 +610,7 @@
 				318BCDF125BC02E200E61A70 /* Tool_print.swift in Sources */,
 				3125F54625BC1ECD00F677AE /* UILabel+font.swift in Sources */,
 				31013BCC25BD6DE3007434B9 /* VC_uk_physics_gravicy.swift in Sources */,
+				31F2284525BDA3150034FD11 /* SKScene_textureAtlas.swift in Sources */,
 				318BCDC025BBFF0E00E61A70 /* VC_scn_main.swift in Sources */,
 				3125F54C25BC1ECD00F677AE /* NetworkRequestObject.swift in Sources */,
 				318BCDCA25BBFFD400E61A70 /* VC_login.swift in Sources */,
@@ -610,6 +628,7 @@
 				317AD94B25BD818600D398AF /* VC_uk_physics_push.swift in Sources */,
 				31013BC825BD6BB2007434B9 /* VC_uk_mask_findGirl.swift in Sources */,
 				31013BDA25BD713A007434B9 /* M_sk_main.swift in Sources */,
+				31F2284225BDA3080034FD11 /* SKScene_scale.swift in Sources */,
 				3125F54A25BC1ECD00F677AE /* NetworkHelper.swift in Sources */,
 				31013BD725BD7132007434B9 /* VM_sk_main.swift in Sources */,
 				3125F54B25BC1ECD00F677AE /* NetworkBaseUrl.swift in Sources */,
@@ -620,6 +639,7 @@
 				31F2283225BD9D200034FD11 /* VC_uk_physics_collision.swift in Sources */,
 				31F2282E25BD9BBC0034FD11 /* VC_uk_physics_attachment.swift in Sources */,
 				31A92FF425BC3490003AC351 /* M_uk_main.swift in Sources */,
+				31F2283D25BDA2460034FD11 /* VC_sk_action.swift in Sources */,
 				318BCD9125BBF31100E61A70 /* TabC.swift in Sources */,
 				31013BDE25BD7DFD007434B9 /* VC_uk_physics_snap.swift in Sources */,
 				3125F54825BC1ECD00F677AE /* NetworkManager.swift in Sources */,
