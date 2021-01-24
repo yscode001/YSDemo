@@ -10,7 +10,7 @@ import YSKit
 
 // MARK: - UITextView字体扩展
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UITextView{
+extension YSOriginalObjectProtocol where OriginalObjectType: UITextView{
     
     @discardableResult func font(_ ofSize: CGFloat) -> OriginalObjectType{
         originalObject.font = UIFont.ys.create(ofSize)

@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 /// 网络请求对象
-public struct NetworkRequestObject {
+struct NetworkRequestObject {
     
     /// 方法类型
     private(set) var method:Alamofire.HTTPMethod = .get
@@ -31,7 +31,7 @@ public struct NetworkRequestObject {
     
     private init() {}
     
-    public init(method: Alamofire.HTTPMethod, route: String, parms: [String: Any]) {
+    init(method: Alamofire.HTTPMethod, route: String, parms: [String: Any]) {
         self.method = method
         self.route = route
         self.parms = parms
@@ -40,7 +40,7 @@ public struct NetworkRequestObject {
         self.parmsEncoding = method == .get ? URLEncoding.default : JSONEncoding.default
     }
     
-    public init(method: Alamofire.HTTPMethod, route: String, parms: [String: Any], baseURLType: NetworkBaseUrlType, header: [String: String], parmsEncoding: ParameterEncoding) {
+    init(method: Alamofire.HTTPMethod, route: String, parms: [String: Any], baseURLType: NetworkBaseUrlType, header: [String: String], parmsEncoding: ParameterEncoding) {
         self.method = method
         self.route = route
         self.parms = parms

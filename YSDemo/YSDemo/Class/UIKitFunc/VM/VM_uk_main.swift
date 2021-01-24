@@ -21,11 +21,4 @@ class VM_uk_main {
             M_uk_main(identifier: "id2", title: "找美女")
         ])
     ])
-    
-    //    private(set) lazy var list:Observable<[M_uk_main]> = Observable.just([
-    //        HomeM(identifier: "id8", title: "SpriteKit：简单例子"),
-    //        HomeM(identifier: "id9", title: "SpriteKit：纹理"),
-    //        HomeM(identifier: "id10", title: "SpriteKit：纹理集"),
-    //        HomeM(identifier: "id11", title: "SpriteKit：打怪兽")
-    //    ])
 }

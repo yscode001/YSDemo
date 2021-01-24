@@ -10,7 +10,7 @@ import YSKit
 
 // MARK: - UIButton字体扩展
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UIButton{
+extension YSOriginalObjectProtocol where OriginalObjectType: UIButton{
     
     @discardableResult func font(_ ofSize: CGFloat) -> OriginalObjectType{
         originalObject.titleLabel?.font = UIFont.ys.create(ofSize)

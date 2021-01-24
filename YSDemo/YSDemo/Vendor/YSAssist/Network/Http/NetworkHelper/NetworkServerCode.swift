@@ -8,7 +8,7 @@
 import Foundation
 
 /// 服务器给的常见码
-public enum NetworkServerCode: Int {
+enum NetworkServerCode: Int {
     
     /// 一切正常
     case correct = 1000

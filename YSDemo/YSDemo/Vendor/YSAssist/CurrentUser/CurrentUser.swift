@@ -9,6 +9,7 @@ import Foundation
 import RxCocoa
 import YSKit
 
+/// 当前用户信息
 class CurrentUser: NSObject, NSCoding, Codable{
 
     // MARK: - 属性

@@ -10,7 +10,7 @@ import YSKit
 
 // MARK: - UITextField字体扩展
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UITextField{
+extension YSOriginalObjectProtocol where OriginalObjectType: UITextField{
     
     @discardableResult func font(_ ofSize: CGFloat) -> OriginalObjectType{
         originalObject.font = UIFont.ys.create(ofSize)

@@ -10,7 +10,7 @@ import YSKit
 
 // MARK: - UILabel字体扩展
 
-public extension YSOriginalObjectProtocol where OriginalObjectType: UILabel{
+extension YSOriginalObjectProtocol where OriginalObjectType: UILabel{
     
     @discardableResult func font(_ ofSize: CGFloat) -> OriginalObjectType{
         originalObject.font = UIFont.ys.create(ofSize)

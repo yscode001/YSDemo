@@ -8,7 +8,7 @@
 import Foundation
 import YSKit
 
-public extension YSOriginalObjectProtocol where OriginalObjectType == UIFont{
+extension YSOriginalObjectProtocol where OriginalObjectType == UIFont{
     
     static func create(_ ofSize: CGFloat) -> UIFont{
         return UIFont.systemFont(ofSize: ofSize)

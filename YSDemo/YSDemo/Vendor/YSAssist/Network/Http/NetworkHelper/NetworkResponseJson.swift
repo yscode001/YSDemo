@@ -8,8 +8,8 @@
 import Foundation
 import SwiftyJSON
 
-/// 网络请求响应数据(Json)
-public enum NetworkResponseJson {
+/// 网络请求响应数据
+enum NetworkResponseJson {
     
     /// 网络请求出错
     case networkError(errorCode: Int, errorMessage: String)

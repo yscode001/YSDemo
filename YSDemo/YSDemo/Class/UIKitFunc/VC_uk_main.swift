@@ -20,7 +20,8 @@ class VC_uk_main: VC_base {
     private func setupUI(){
         view.ys.addSubviews(tbv)
         tbv.snp.makeConstraints { (make) in
-            make.edges.equalTo(UIEdgeInsets.zero)
+            make.top.equalTo(UIScreen.ys.statusBarFrame.height)
+            make.bottom.leading.trailing.equalTo(0)
         }
     }
     

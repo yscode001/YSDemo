@@ -11,10 +11,11 @@ import RxSwift
 import RxAlamofire
 import SwiftyJSON
 
-public class NetworkManager {
+/// Http网络请求管理
+class NetworkManager {
     
     private init(){}
-    public static let shared:NetworkManager = NetworkManager()
+    static let shared:NetworkManager = NetworkManager()
     
     //    private lazy var manager:SessionManager = {
     //        let config = URLSessionConfiguration.default
@@ -27,7 +28,7 @@ public class NetworkManager {
     private var reachabilityManager:NetworkReachabilityManager?
     
     /// 开始监听网络状态
-    public func startListeningNetworkReachability() {
+    func startListeningNetworkReachability() {
         if reachabilityManager == nil{
             reachabilityManager = NetworkReachabilityManager()
         }
@@ -47,7 +48,7 @@ public class NetworkManager {
     }
     
     /// 结束监听网络状态
-    public func stopListeningNetworkReachability(){
+    func stopListeningNetworkReachability(){
         reachabilityManager?.stopListening()
     }
 }
@@ -56,7 +57,7 @@ public class NetworkManager {
 extension NetworkManager{
     
     /// 请求网络数据，每次请求都会创建observable，发送数据后会自动complete
-    @discardableResult public func request(requestObject: NetworkRequestObject) -> Observable<NetworkResponseJson>{
+    @discardableResult func request(requestObject: NetworkRequestObject) -> Observable<NetworkResponseJson>{
         let requestURL = NetworkHelper.handleURL(method: requestObject.method, baseUrlType: requestObject.baseURLType, route: requestObject.route)
         let requestHeader = NetworkHelper.handleHeader(method: requestObject.method, header: requestObject.header)
         let requestParms = NetworkHelper.handleParms(method: requestObject.method, parms: requestObject.parms)

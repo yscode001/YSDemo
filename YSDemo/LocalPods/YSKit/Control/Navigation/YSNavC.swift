@@ -57,4 +57,10 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == YSNavC{
         navC.allowNavEdgeGesture = allowNavEdgeGesture
         return navC
     }
+    
+    /// 是否允许边缘侧滑手势
+    /// - Parameter allowNavEdgeGesture: 是否允许边缘侧滑手势
+    func setupData(allowNavEdgeGesture: Bool){
+        originalObject.allowNavEdgeGesture = allowNavEdgeGesture
+    }
 }

@@ -1,5 +1,5 @@
 //
-//  YSBaseCell_tbv__subtitle.swift
+//  YSBaseCell_tbv_subtitle.swift
 //  YSKit
 //
 //  Created by yaoshuai on 2020/12/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class YSBaseCell_tbv__subtitle: UITableViewCell {
+open class YSBaseCell_tbv_subtitle: UITableViewCell {
     
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)

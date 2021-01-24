@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Baseurl类型(主要是为了方便扩展)
 
 /// Baseurl类型
-public enum NetworkBaseUrlType {
+enum NetworkBaseUrlType {
     
     case main
     
