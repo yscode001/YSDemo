@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31013BC825BD6BB2007434B9 /* VC_uk_mask_findGirl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31013BC725BD6BB1007434B9 /* VC_uk_mask_findGirl.swift */; };
+		31013BCC25BD6DE3007434B9 /* VC_uk_physics_gravicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31013BCB25BD6DE3007434B9 /* VC_uk_physics_gravicy.swift */; };
+		31013BD325BD7129007434B9 /* Cell_sk_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31013BD225BD7129007434B9 /* Cell_sk_main.swift */; };
+		31013BD725BD7132007434B9 /* VM_sk_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31013BD625BD7132007434B9 /* VM_sk_main.swift */; };
+		31013BDA25BD713A007434B9 /* M_sk_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31013BD925BD713A007434B9 /* M_sk_main.swift */; };
+		31013BDE25BD7DFD007434B9 /* VC_uk_physics_snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31013BDD25BD7DFD007434B9 /* VC_uk_physics_snap.swift */; };
 		3125F54325BC1ECD00F677AE /* UITextField+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3125F53325BC1ECD00F677AE /* UITextField+font.swift */; };
 		3125F54425BC1ECD00F677AE /* UIFont+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3125F53425BC1ECD00F677AE /* UIFont+ext.swift */; };
 		3125F54525BC1ECD00F677AE /* UITextView+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3125F53525BC1ECD00F677AE /* UITextView+font.swift */; };
@@ -51,6 +57,12 @@
 
 /* Begin PBXFileReference section */
 		0ABA2178DF4A371A40E64BB7 /* Pods-YSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSDemo.release.xcconfig"; path = "Target Support Files/Pods-YSDemo/Pods-YSDemo.release.xcconfig"; sourceTree = "<group>"; };
+		31013BC725BD6BB1007434B9 /* VC_uk_mask_findGirl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_uk_mask_findGirl.swift; sourceTree = "<group>"; };
+		31013BCB25BD6DE3007434B9 /* VC_uk_physics_gravicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_uk_physics_gravicy.swift; sourceTree = "<group>"; };
+		31013BD225BD7129007434B9 /* Cell_sk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell_sk_main.swift; sourceTree = "<group>"; };
+		31013BD625BD7132007434B9 /* VM_sk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VM_sk_main.swift; sourceTree = "<group>"; };
+		31013BD925BD713A007434B9 /* M_sk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = M_sk_main.swift; path = YSDemo/Class/SpriteKitFunc/ViewModel/M_sk_main.swift; sourceTree = SOURCE_ROOT; };
+		31013BDD25BD7DFD007434B9 /* VC_uk_physics_snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_uk_physics_snap.swift; sourceTree = "<group>"; };
 		3125F53325BC1ECD00F677AE /* UITextField+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+font.swift"; sourceTree = "<group>"; };
 		3125F53425BC1ECD00F677AE /* UIFont+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+ext.swift"; sourceTree = "<group>"; };
 		3125F53525BC1ECD00F677AE /* UITextView+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+font.swift"; sourceTree = "<group>"; };
@@ -124,6 +136,30 @@
 				0ABA2178DF4A371A40E64BB7 /* Pods-YSDemo.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		31013BCF25BD7108007434B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				31013BD925BD713A007434B9 /* M_sk_main.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		31013BD025BD710F007434B9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				31013BD625BD7132007434B9 /* VM_sk_main.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		31013BD125BD711A007434B9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				31013BD225BD7129007434B9 /* Cell_sk_main.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		3125F53125BC1ECD00F677AE /* YSAssist */ = {
@@ -226,7 +262,6 @@
 			children = (
 				3125F58E25BC23A500F677AE /* Atlas */,
 				3125F58725BC236A00F677AE /* Audio */,
-				3125F58825BC237000F677AE /* Icon */,
 			);
 			path = Sprite;
 			sourceTree = "<group>";
@@ -238,13 +273,6 @@
 				3125F58925BC239300F677AE /* sk_biu.caf */,
 			);
 			path = Audio;
-			sourceTree = "<group>";
-		};
-		3125F58825BC237000F677AE /* Icon */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Icon;
 			sourceTree = "<group>";
 		};
 		3125F58E25BC23A500F677AE /* Atlas */ = {
@@ -340,6 +368,9 @@
 			isa = PBXGroup;
 			children = (
 				318BCDB825BBFEF700E61A70 /* VC_uk_main.swift */,
+				31013BC725BD6BB1007434B9 /* VC_uk_mask_findGirl.swift */,
+				31013BCB25BD6DE3007434B9 /* VC_uk_physics_gravicy.swift */,
+				31013BDD25BD7DFD007434B9 /* VC_uk_physics_snap.swift */,
 				31A92FF825BC356E003AC351 /* Cell */,
 				31A92FF225BC3482003AC351 /* Model */,
 				31A92FED25BC345C003AC351 /* VM */,
@@ -351,6 +382,9 @@
 			isa = PBXGroup;
 			children = (
 				318BCDBC25BBFF0400E61A70 /* VC_sk_main.swift */,
+				31013BD125BD711A007434B9 /* Cell */,
+				31013BCF25BD7108007434B9 /* Model */,
+				31013BD025BD710F007434B9 /* ViewModel */,
 			);
 			path = SpriteKitFunc;
 			sourceTree = "<group>";
@@ -549,11 +583,13 @@
 				31AAEA6E25BC3A66000F19B5 /* VendorConfig.swift in Sources */,
 				318BCDF125BC02E200E61A70 /* Tool_print.swift in Sources */,
 				3125F54625BC1ECD00F677AE /* UILabel+font.swift in Sources */,
+				31013BCC25BD6DE3007434B9 /* VC_uk_physics_gravicy.swift in Sources */,
 				318BCDC025BBFF0E00E61A70 /* VC_scn_main.swift in Sources */,
 				3125F54C25BC1ECD00F677AE /* NetworkRequestObject.swift in Sources */,
 				318BCDCA25BBFFD400E61A70 /* VC_login.swift in Sources */,
 				3125F54D25BC1ECD00F677AE /* NetworkServerCode.swift in Sources */,
 				31A9300625BC3882003AC351 /* Type_environment.swift in Sources */,
+				31013BD325BD7129007434B9 /* Cell_sk_main.swift in Sources */,
 				31A92FEF25BC3468003AC351 /* VM_uk_main.swift in Sources */,
 				31A9300025BC360B003AC351 /* CellID.swift in Sources */,
 				318BCD6C25BBF26700E61A70 /* AppDelegate.swift in Sources */,
@@ -562,7 +598,10 @@
 				318BCDBD25BBFF0400E61A70 /* VC_sk_main.swift in Sources */,
 				318BCDB925BBFEF700E61A70 /* VC_uk_main.swift in Sources */,
 				31A92FFA25BC357B003AC351 /* Cell_uk_main.swift in Sources */,
+				31013BC825BD6BB2007434B9 /* VC_uk_mask_findGirl.swift in Sources */,
+				31013BDA25BD713A007434B9 /* M_sk_main.swift in Sources */,
 				3125F54A25BC1ECD00F677AE /* NetworkHelper.swift in Sources */,
+				31013BD725BD7132007434B9 /* VM_sk_main.swift in Sources */,
 				3125F54B25BC1ECD00F677AE /* NetworkBaseUrl.swift in Sources */,
 				315AFE3E25BC339D007A8E63 /* VC_mv_main.swift in Sources */,
 				318BCDEB25BC009100E61A70 /* Color.swift in Sources */,
@@ -570,6 +609,7 @@
 				31A9300325BC386F003AC351 /* Type_custom.swift in Sources */,
 				31A92FF425BC3490003AC351 /* M_uk_main.swift in Sources */,
 				318BCD9125BBF31100E61A70 /* TabC.swift in Sources */,
+				31013BDE25BD7DFD007434B9 /* VC_uk_physics_snap.swift in Sources */,
 				3125F54825BC1ECD00F677AE /* NetworkManager.swift in Sources */,
 				3125F54425BC1ECD00F677AE /* UIFont+ext.swift in Sources */,
 				3125F54E25BC1ECD00F677AE /* CurrentUser.swift in Sources */,

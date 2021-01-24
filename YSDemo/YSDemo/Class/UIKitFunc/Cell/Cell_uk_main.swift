@@ -7,13 +7,6 @@
 
 class Cell_uk_main: YSBaseCell_tbv_default{
     
-    override func setupUI() {
-        
-    }
-}
-
-extension Cell_uk_main{
-    
     func setupData(model: M_uk_main){
         textLabel?.text = model.title
     }
