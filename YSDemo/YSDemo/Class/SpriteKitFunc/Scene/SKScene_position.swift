@@ -23,7 +23,7 @@ class SKScene_position: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        speed()
+        deleteAction()
     }
 }
 
@@ -42,6 +42,34 @@ extension SKScene_position{
         // let act = SKAction.move(to: CGPoint(x: 200, y: 500), duration: 2) // 指定点移动，如果当前点==目标点，不移动
         
         node.run(act)
+    }
+    
+    // MARK: - 调整尺寸
+    private func resizeAction(){
+        // 增量方式调整
+        let act1 = SKAction.resize(byWidth: 100, height: 100, duration: 2)
+        
+        // 调整至目标值
+        let act2 = SKAction.resize(toWidth: 50, duration: 2)
+        let act3 = SKAction.resize(toHeight: 50, duration: 2)
+        let act4 = SKAction.resize(toWidth: 200, height: 200, duration: 2)
+        
+        node.run(SKAction.sequence([act1, act2, act3, act4]))
+    }
+    
+    // MARK: - 缩放
+    private func scaleAction(){
+        // 增量方式缩放
+        // let act1 = SKAction.scale(by: 2, duration: 2) // x、y都扩大2倍
+        // let act2 = SKAction.scaleX(by: 1, y: 1.5, duration: 2) // x不变，y再扩大1.5倍
+    
+        // let act1 = SKAction.scale(to: 2, duration: 2) // 扩大至2倍
+        // let act2 = SKAction.scale(to: CGSize(width: 150, height: 150), duration: 2) // 扩大至指定尺寸
+        
+        let act1 = SKAction.scaleX(to: 2, duration: 2) // x轴缩放
+        let act2 = SKAction.scaleY(to: 2, duration: 2) // y轴缩放
+        let act3 = SKAction.scaleX(to: 1, y: 1, duration: 2) // x、y都缩放
+        node.run(SKAction.sequence([act1, act2, act3]))
     }
     
     // MARK: - 旋转
@@ -104,6 +132,89 @@ extension SKScene_position{
         let act = SKAction.sequence([move, reversed])
         node.run(act)
     }
+    
+    // MARK: - 块动作，把动作的整个执行过程放到一个Block块中
+    
+    // 2中形式，一种带线程，一种不带
+    private func blockAction(){
+        let block = SKAction.run({ [weak self] in
+            let move = SKAction.move(by: CGVector(dx: 100, dy: 100), duration: 2)
+            self?.node.run(move)
+        }, queue: DispatchQueue.main)
+        node.run(block)
+    }
+    
+    // MARK: - 透明度动作，改变节点透明度
+    private func fadeAction(){
+        // 指定时间alpha变为0
+        let act1 = SKAction.fadeOut(withDuration: 2)
+        
+        // 指定时间alpha变为1
+        let act2 = SKAction.fadeIn(withDuration: 2)
+        
+        // 指定时间alpha变为指定值
+        let act3 = SKAction.fadeAlpha(to: 0.2, duration: 2)
+        
+        /// alpha的增量，增加多少alpha
+        let act4 = SKAction.fadeAlpha(by: 0.2, duration: 2)
+        
+        node.run(SKAction.sequence([act1, act2, act3, act4]))
+    }
+    
+    // MARK: - 隐藏/显示动作
+    /*
+     隐藏/显示动作：整体效果看起来和透明度的整体效果差不多。但是还是有一些区别的：
+     透明度只是改变的透明度，节点还是存在在场景上的。
+     而隐藏/显示动作是真的隐藏了，节点是不存在场景之中的。
+     */
+    private func hideUnhideAction(){
+        let hide = SKAction.hide()
+        let unhide = SKAction.unhide()
+        node.run(SKAction.sequence([hide, unhide]))
+    }
+    
+    // MARK: - 颜色动作，改变节点的颜色以及混合因子
+    private func colorAction(){
+        // BlendFactor，混合因为，可以理解为颜色的深浅度
+        let act1 = SKAction.colorize(withColorBlendFactor: 0.2, duration: 2)
+        let act2 = SKAction.colorize(with: .red, colorBlendFactor: 0.8, duration: 2)
+        node.run(SKAction.sequence([act1, act2]))
+    }
+    
+    // MARK: - 等待动作，一般结合其他动作一起使用
+    private func waitAction(){
+        // 指定延迟时间
+        let wait1 = SKAction.wait(forDuration: 2)
+        
+        // 指定延迟时间和延迟时间的范围
+        // range：前后变化2秒(range/2)，duration：2 + (-2...2) = 0...4
+        let wait2 = SKAction.wait(forDuration: 2, withRange: 4)
+        
+        let scale = SKAction.scaleX(to: 2, duration: 2)
+        let move = SKAction.move(to: CGPoint(x: 100, y: 300), duration: 2)
+        let color = SKAction.colorize(with: .red, colorBlendFactor: 1, duration: 2)
+        
+        node.run(SKAction.sequence([scale, wait1, move, wait2, color]))
+    }
+    
+    // MARK: - 自定义动作
+    private func customAction(){
+        // 2秒中内block一直在执行
+        let act = SKAction.customAction(withDuration: 2, actionBlock: { [weak self] (node, elapsedTime) in
+            guard let `self` = self else{ return }
+            node.position = CGPoint(x: 100, y: 300)
+            print(elapsedTime) // 当前过了多久
+            print(node == self.node) // true，这里的node就是执行动作的node
+        })
+        node.run(act)
+    }
+    
+    // MARK: - 删除动作，即删除节点，当不需要节点的时候，可以删除
+    private func deleteAction(){
+        let act = SKAction.move(to: CGPoint(x: 100, y: 400), duration: 2)
+        let del = SKAction.removeFromParent()
+        node.run(SKAction.sequence([act, del]))
+    }
 }
 
 // MARK: - 速度动作
@@ -114,7 +225,7 @@ extension SKScene_position{
  */
 extension SKScene_position{
     
-    private func speed(){
+    private func speedAction(){
         // 指定节点运动的速度，指定完成动作所需要的时间
         // 速度恒定
         let speed = SKAction.speed(to: 10, duration: 2)
