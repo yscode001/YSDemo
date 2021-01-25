@@ -18,6 +18,10 @@ class SKScene_scale: SKScene {
         addChild(node)
     }
     
+    deinit {
+        Tool_print.print("SKScene-deinit：SKScene_scale")
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         move_only()
     }

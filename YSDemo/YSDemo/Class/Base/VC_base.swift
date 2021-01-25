@@ -34,7 +34,7 @@ class VC_base: YSBaseVC {
     }
     
     deinit {
-        Tool_print.print("VC-deinit：\(description)")
+        Tool_print.print("VC-deinit：\(ys.className)")
     }
 }
 

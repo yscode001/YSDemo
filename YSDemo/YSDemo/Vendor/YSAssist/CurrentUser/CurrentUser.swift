@@ -112,9 +112,9 @@ extension CurrentUser{
     func save(){
         if NSKeyedArchiver.archiveRootObject(self, toFile: CurrentUser.localFullPath) {
             CurrentUser.infoChanged.accept(())
-            print("当前用户信息保存成功")
+            Tool_print.print("当前用户信息保存成功")
         }else{
-            print("当前用户信息保存失败")
+            Tool_print.print("当前用户信息保存失败")
         }
     }
     
@@ -146,9 +146,9 @@ extension CurrentUser{
         age = 18
         gender = 0
         if NSKeyedArchiver.archiveRootObject(self, toFile: CurrentUser.localFullPath) {
-            print("退出--当前用户信息重置后保存--成功")
+            Tool_print.print("退出--当前用户信息重置后保存--成功")
         }else{
-            print("退出--当前用户信息重置后保存--失败")
+            Tool_print.print("退出--当前用户信息重置后保存--失败")
         }
     }
 }

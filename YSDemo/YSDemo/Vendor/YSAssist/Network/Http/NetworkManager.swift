@@ -36,13 +36,13 @@ class NetworkManager {
             guard let _ = self else{ return }
             switch status {
             case .notReachable:
-                print("网络状况：notReachable，当前网络不可用")
+                Tool_print.print("网络状况：notReachable，当前网络不可用")
             case .reachable(.cellular):
-                print("网络状况：reachable(.cellular)，蜂窝网络连接")
+                Tool_print.print("网络状况：reachable(.cellular)，蜂窝网络连接")
             case .reachable(.ethernetOrWiFi):
-                print("网络状况：reachable(.ethernetOrWiFi)，以太网或wifi连接")
+                Tool_print.print("网络状况：reachable(.ethernetOrWiFi)，以太网或wifi连接")
             case .unknown :
-                print("网络状况：unknown，网络状态未知")
+                Tool_print.print("网络状况：unknown，网络状态未知")
             }
         })
     }

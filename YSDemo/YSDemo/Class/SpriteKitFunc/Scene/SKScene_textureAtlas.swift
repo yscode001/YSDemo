@@ -18,6 +18,10 @@ class SKScene_textureAtlas: SKScene {
         node.position = CGPoint(x: view.bounds.width * 0.5, y: view.bounds.height * 0.5)
     }
     
+    deinit {
+        Tool_print.print("SKScene-deinit：SKScene_textureAtlas")
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let atlas = SKTextureAtlas(named: "plane")
         
