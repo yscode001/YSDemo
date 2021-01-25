@@ -38,6 +38,10 @@ class SKScene_transition1: SKScene {
         backgroundColor = .red
     }
     
+    deinit {
+        Tool_print.print("SKScene-deinit：SKScene_transition1")
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view?.presentScene(SKScene_transition2(), transition: getTransition())
     }
@@ -53,6 +57,10 @@ class SKScene_transition2: SKScene {
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         backgroundColor = .blue
+    }
+    
+    deinit {
+        Tool_print.print("SKScene-deinit：SKScene_transition2")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
