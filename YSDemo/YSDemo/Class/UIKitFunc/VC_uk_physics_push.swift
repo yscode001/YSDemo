@@ -59,25 +59,25 @@ class VC_uk_physics_push: VC_base {
     }
     
     private func setupUI(){
-        view.ys.addSubviews(continuousBtn, instantaneousBtn, bluePointV, redPointV)
+        view.ys.addSubviews(navBar, continuousBtn, instantaneousBtn, bluePointV, redPointV)
         continuousBtn.snp.makeConstraints { (make) in
+            make.top.equalTo(navBar.snp.bottom).offset(20)
             make.centerX.equalTo(view).offset(80)
-            make.top.equalTo(30)
             make.size.equalTo(CGSize(width: 100, height: 40))
         }
         instantaneousBtn.snp.makeConstraints { (make) in
+            make.top.equalTo(navBar.snp.bottom).offset(20)
             make.centerX.equalTo(view).offset(-80)
-            make.top.equalTo(30)
             make.size.equalTo(CGSize(width: 100, height: 40))
         }
         bluePointV.snp.makeConstraints { (make) in
+            make.top.equalTo(continuousBtn.snp.bottom).offset(20)
             make.centerX.equalTo(view).offset(80)
-            make.top.equalTo(100)
             make.size.equalTo(CGSize(width: 100, height: 100))
         }
         redPointV.snp.makeConstraints { (make) in
+            make.top.equalTo(instantaneousBtn.snp.bottom).offset(20)
             make.centerX.equalTo(view).offset(-80)
-            make.top.equalTo(100)
             make.size.equalTo(CGSize(width: 100, height: 100))
         }
     }

@@ -18,10 +18,10 @@ class VC_uk_physics_gravity: VC_base {
     }
     
     private func setupUI(){
-        view.ys.addSubviews(bluePointV)
+        view.ys.addSubviews(navBar, bluePointV)
         bluePointV.snp.makeConstraints { (make) in
+            make.top.equalTo(navBar.snp.bottom).offset(20)
             make.centerX.equalTo(view)
-            make.top.equalTo(100)
             make.size.equalTo(CGSize(width: 100, height: 100))
         }
     }

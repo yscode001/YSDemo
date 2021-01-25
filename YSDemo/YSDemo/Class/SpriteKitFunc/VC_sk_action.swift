@@ -17,19 +17,21 @@ class VC_sk_action: VC_base {
         self.scene = scene
     }
     
-    override func loadView() {
-        view = skV
-    }
-    
     override func viewDidLoad(firstTime: Bool) {
         super.viewDidLoad(firstTime: firstTime)
         setupScene()
     }
     
     private func setupScene(){
+        view.ys.addSubviews(navBar, skV)
+        
+        let vb = view.bounds
+        let skFrame = CGRect(x: 0, y: navBar.bounds.height, width: vb.width, height: vb.height - navBar.bounds.height)
+        skV.frame = skFrame
+        
         scene?.scaleMode = .aspectFill
         scene?.backgroundColor = Color.background
-        scene?.size = view.bounds.size
+        scene?.size = skFrame.size
         skV.presentScene(scene)
     }
 }

@@ -9,13 +9,13 @@
 class SKScene_textureAtlas: SKScene {
     
     private lazy var node:SKSpriteNode = SKSpriteNode(imageNamed: "girl").ys.then{
-        $0.position = CGPoint(x: UIScreen.ys.mainWidth * 0.5, y: 80)
         $0.size = CGSize(width: 100, height: 100)
     }
  
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         addChild(node)
+        node.position = CGPoint(x: view.bounds.width * 0.5, y: view.bounds.height * 0.5)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

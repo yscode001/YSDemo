@@ -22,15 +22,15 @@ class VC_uk_physics_attachment: VC_base {
     }
     
     private func setupUI(){
-        view.ys.addSubviews(redPointV, bluePointV)
+        view.ys.addSubviews(navBar, redPointV, bluePointV)
         redPointV.snp.makeConstraints { (make) in
+            make.top.equalTo(navBar.snp.bottom).offset(20)
             make.centerX.equalTo(view)
-            make.top.equalTo(100)
             make.size.equalTo(CGSize(width: 100, height: 100))
         }
         bluePointV.snp.makeConstraints { (make) in
+            make.top.equalTo(redPointV.snp.bottom).offset(20)
             make.centerX.equalTo(view)
-            make.top.equalTo(250)
             make.size.equalTo(CGSize(width: 100, height: 100))
         }
     }

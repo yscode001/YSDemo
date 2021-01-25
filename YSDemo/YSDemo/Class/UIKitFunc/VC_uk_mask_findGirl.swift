@@ -30,13 +30,15 @@ class VC_uk_mask_findGirl: VC_base{
     
     private func setupUI(){
         girlImgV.layer.mask = circleMaskLayer
-        view.ys.addSubviews(girlBGImgV, girlImgV)
+        view.ys.addSubviews(navBar, girlBGImgV, girlImgV)
         
         girlBGImgV.snp.makeConstraints { (make) in
-            make.edges.equalTo(UIEdgeInsets.zero)
+            make.top.equalTo(navBar.snp.bottom)
+            make.bottom.leading.trailing.equalTo(0)
         }
         girlImgV.snp.makeConstraints { (make) in
-            make.edges.equalTo(UIEdgeInsets.zero)
+            make.top.equalTo(navBar.snp.bottom)
+            make.bottom.leading.trailing.equalTo(0)
         }
     }
     
