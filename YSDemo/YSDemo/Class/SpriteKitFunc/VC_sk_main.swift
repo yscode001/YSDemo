@@ -40,7 +40,7 @@ class VC_sk_main: VC_base {
             guard let `self` = self else{ return }
             switch element.identifier{
             case "id1-1":
-                self.ys.push(VC_sk_action(scene: SKScene_scale()), animated: true)
+                self.ys.push(VC_sk_action(scene: SKScene_position()), animated: true)
             case "id1-2":
                 self.ys.push(VC_sk_action(scene: SKScene_textureAtlas()), animated: true)
             default:
