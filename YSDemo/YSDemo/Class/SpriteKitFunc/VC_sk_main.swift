@@ -43,6 +43,8 @@ class VC_sk_main: VC_base {
                 self.ys.push(VC_sk_action(scene: SKScene_position()), animated: true)
             case "id1-2":
                 self.ys.push(VC_sk_action(scene: SKScene_textureAtlas()), animated: true)
+            case "id1-3":
+                self.ys.push(VC_sk_action(scene: SKScene_transition1()), animated: true)
             default:
                 break
             }
