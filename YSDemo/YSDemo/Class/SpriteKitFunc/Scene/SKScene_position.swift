@@ -8,7 +8,7 @@
 /// 位置动作
 class SKScene_position: SKScene {
     
-    private lazy var node:SKSpriteNode = SKSpriteNode(imageNamed: "girl").ys.then{
+    private lazy var node:SKSpriteNode = SKSpriteNode(imageNamed: "sprite-2").ys.then{
         $0.position = CGPoint(x: UIScreen.ys.mainWidth * 0.5, y: 80)
         $0.size = CGSize(width: 100, height: 100)
     }

@@ -404,6 +404,7 @@
 				318BCDBC25BBFF0400E61A70 /* VC_sk_main.swift */,
 				31013BD125BD711A007434B9 /* Cell */,
 				3142BFD725BE668000E340D8 /* Model */,
+				31BCDEF125BFB839004D611C /* Physics */,
 				31F2284025BDA2F60034FD11 /* Scene */,
 				31013BD025BD710F007434B9 /* ViewModel */,
 			);
@@ -479,10 +480,17 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		31F2284025BDA2F60034FD11 /* Scene */ = {
+		31BCDEF125BFB839004D611C /* Physics */ = {
 			isa = PBXGroup;
 			children = (
 				318195B125BEFDA500B1380A /* SKScene_physics.swift */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		31F2284025BDA2F60034FD11 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
 				31F2284125BDA3080034FD11 /* SKScene_position.swift */,
 				31F2284425BDA3150034FD11 /* SKScene_textureAtlas.swift */,
 				314CFE0925BED49A00120774 /* SKScene_transition.swift */,

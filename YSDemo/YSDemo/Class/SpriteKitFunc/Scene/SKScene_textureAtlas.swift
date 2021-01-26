@@ -8,7 +8,7 @@
 /// 纹理集action，其实就相当于UIKit里面的序列帧动画
 class SKScene_textureAtlas: SKScene {
     
-    private lazy var node:SKSpriteNode = SKSpriteNode(imageNamed: "girl").ys.then{
+    private lazy var node:SKSpriteNode = SKSpriteNode(imageNamed: "sprite-2").ys.then{
         $0.size = CGSize(width: 100, height: 100)
     }
  
