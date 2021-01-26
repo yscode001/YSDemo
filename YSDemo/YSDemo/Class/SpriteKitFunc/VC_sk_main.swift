@@ -49,6 +49,8 @@ class VC_sk_main: VC_base {
                 self.ys.push(VC_sk_action(scene: SKScene_physics()), animated: true)
             case "id3-1":
                 self.ys.push(VC_sk_action(scene: SKScene_game_monster()), animated: true)
+            case "id4-1":
+                self.ys.push(VC_sk_action(scene: SKScene_camera()), animated: true)
             default:
                 break
             }
