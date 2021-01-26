@@ -26,7 +26,8 @@ class SKScene_physics: SKScene {
     
     /// 设置场景的物理世界
     private func setupScenePhysicsWorld(){
-        physicsWorld.gravity = CGVector(dx: 0, dy: 1)
+        // 重力加速度
+        physicsWorld.gravity = CGVector(dx: 0, dy: -9.8)
         
         // 碰撞检测代理
         physicsWorld.contactDelegate = self
