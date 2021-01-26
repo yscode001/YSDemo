@@ -8,15 +8,26 @@
 /// 物理世界
 class SKScene_physics: SKScene {
     
-    private lazy var node:SKSpriteNode = SKSpriteNode(imageNamed: "sprite-2").ys.then{
-        $0.size = CGSize(width: 100, height: 100)
+    private lazy var node1:SKSpriteNode = SKSpriteNode(imageNamed: "sprite-1").ys.then{
+        $0.size = CGSize(width: 50, height: 50)
+    }
+    private lazy var node2:SKSpriteNode = SKSpriteNode(imageNamed: "sprite-2").ys.then{
+        $0.size = CGSize(width: 50, height: 50)
+    }
+    private lazy var node3:SKSpriteNode = SKSpriteNode(imageNamed: "sprite-3").ys.then{
+        $0.size = CGSize(width: 50, height: 50)
     }
  
     override func didMove(to view: SKView) {
         super.didMove(to: view)
-        addChild(node)
-        node.position = CGPoint(x: view.bounds.width * 0.5, y: view.bounds.height - 80)
+        addChild(node1)
+        addChild(node2)
+        addChild(node3)
+        node1.position = CGPoint(x: 80, y: view.bounds.height - 50)
+        node2.position = CGPoint(x: 200, y: view.bounds.height - 50)
+        node3.position = CGPoint(x: 320, y: view.bounds.height - 50)
         
+        setupNodePhysicsBody()
         setupScenePhysicsWorld()
     }
     
@@ -26,48 +37,16 @@ class SKScene_physics: SKScene {
     
     /// 设置场景的物理世界
     private func setupScenePhysicsWorld(){
-        // 重力加速度
-        physicsWorld.gravity = CGVector(dx: 0, dy: -9.8)
-        
         // 碰撞检测代理
         physicsWorld.contactDelegate = self
+    }
+    
+    /// 设置节点的物理体
+    private func setupNodePhysicsBody(){
+        
     }
 }
 
 extension SKScene_physics: SKPhysicsContactDelegate{
     
-    /*
-     SKPhysicsContact：
-     open var bodyA: SKPhysicsBody { get }， 联系中的第一个物体
-     open var bodyB: SKPhysicsBody { get }， 联系中的第二个物体
-     open var contactPoint: CGPoint { get }， 两个物体在场景坐标系中的联系点
-     open var contactNormal: CGVector { get }，
-     open var collisionImpulse: CGFloat { get }， 两个物体的碰撞强度，牛顿每秒
-     */
-    
-    /// 开始碰撞
-    func didBegin(_ contact: SKPhysicsContact) {
-        var firstBody: SKPhysicsBody
-        var secondBody: SKPhysicsBody
-        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
-            firstBody = contact.bodyA
-            secondBody = contact.bodyB
-        } else {
-            firstBody = contact.bodyB
-            secondBody = contact.bodyA
-        }
-        
-//        if ((firstBody.categoryBitMask & PhysicsCategory.monster != 0) &&
-//                (secondBody.categoryBitMask & PhysicsCategory.projectile != 0)) {
-//            if let monster = firstBody.node as? SKSpriteNode,
-//               let projectile = secondBody.node as? SKSpriteNode {
-//                projectileDidCollideWithMonster(projectile: projectile, monster: monster)
-//            }
-//        }
-    }
-    
-    /// 结束碰撞
-    func didEnd(_ contact: SKPhysicsContact) {
-        
-    }
 }

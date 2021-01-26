@@ -111,6 +111,9 @@
 		318BCDC925BBFFD400E61A70 /* VC_login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_login.swift; sourceTree = "<group>"; };
 		318BCDEA25BC009100E61A70 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		318BCDF025BC02E200E61A70 /* Tool_print.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool_print.swift; sourceTree = "<group>"; };
+		318C3D0525BFE26D00DEDB79 /* SKPhysicsWorldDesc.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SKPhysicsWorldDesc.md; sourceTree = "<group>"; };
+		318C3D0625BFE27F00DEDB79 /* SKPhysicsBodyDesc.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SKPhysicsBodyDesc.md; sourceTree = "<group>"; };
+		318C3D0825BFE6A600DEDB79 /* SKPhysicsJointDesc.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SKPhysicsJointDesc.md; sourceTree = "<group>"; };
 		31A92FEE25BC3468003AC351 /* VM_uk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VM_uk_main.swift; sourceTree = "<group>"; };
 		31A92FF325BC3490003AC351 /* M_uk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M_uk_main.swift; sourceTree = "<group>"; };
 		31A92FF925BC357B003AC351 /* Cell_uk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell_uk_main.swift; sourceTree = "<group>"; };
@@ -491,6 +494,9 @@
 			isa = PBXGroup;
 			children = (
 				318195B125BEFDA500B1380A /* SKScene_physics.swift */,
+				318C3D0525BFE26D00DEDB79 /* SKPhysicsWorldDesc.md */,
+				318C3D0625BFE27F00DEDB79 /* SKPhysicsBodyDesc.md */,
+				318C3D0825BFE6A600DEDB79 /* SKPhysicsJointDesc.md */,
 			);
 			path = Physics;
 			sourceTree = "<group>";

@@ -8,15 +8,17 @@
 /// physicsbody类型
 struct SKScene_game_monster_physicsCategory {
     
-    static let none      : UInt32 = 0
+    /// 无0
+    static let none             : UInt32 = 0x00
     
-    static let all       : UInt32 = UInt32.max
+    /// 怪兽1
+    static let monster          : UInt32 = 0x01
     
-    /// 怪兽
-    static let monster   : UInt32 = 0b1       // 1
+    /// 炮弹3
+    static let projectile       : UInt32 = 0x11
     
-    /// 炮弹
-    static let projectile: UInt32 = 0b10      // 2
+    /// 可以触发碰撞检测2
+    static let canCollision     : UInt32 = 0x10
 }
 
 /// 打怪兽游戏场景
@@ -53,8 +55,8 @@ class SKScene_game_monster: SKScene {
         projectile.physicsBody = SKPhysicsBody(circleOfRadius: projectile.size.width / 2)
         projectile.physicsBody?.isDynamic = true
         projectile.physicsBody?.categoryBitMask = SKScene_game_monster_physicsCategory.projectile
-        projectile.physicsBody?.contactTestBitMask = SKScene_game_monster_physicsCategory.monster
-        projectile.physicsBody?.collisionBitMask = SKScene_game_monster_physicsCategory.none
+        projectile.physicsBody?.collisionBitMask = SKScene_game_monster_physicsCategory.monster
+        projectile.physicsBody?.contactTestBitMask = SKScene_game_monster_physicsCategory.canCollision
         projectile.physicsBody?.usesPreciseCollisionDetection = true
         
         // 保证炮弹在玩家右侧
@@ -110,8 +112,8 @@ class SKScene_game_monster: SKScene {
         monster.physicsBody = SKPhysicsBody(rectangleOf: monster.size)
         monster.physicsBody?.isDynamic = true
         monster.physicsBody?.categoryBitMask = SKScene_game_monster_physicsCategory.monster
-        monster.physicsBody?.contactTestBitMask = SKScene_game_monster_physicsCategory.projectile
-        monster.physicsBody?.collisionBitMask = SKScene_game_monster_physicsCategory.none
+        monster.physicsBody?.collisionBitMask = SKScene_game_monster_physicsCategory.projectile
+        monster.physicsBody?.contactTestBitMask = SKScene_game_monster_physicsCategory.canCollision
         
         // 怪兽y轴随机
         let actualY = random(min: monster.size.height / 2, max: size.height - monster.size.height / 2)
@@ -153,8 +155,8 @@ extension SKScene_game_monster: SKPhysicsContactDelegate{
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        var body1: SKPhysicsBody
-        var body2: SKPhysicsBody
+        var body1: SKPhysicsBody // 怪兽
+        var body2: SKPhysicsBody // 炮弹
         if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
             body1 = contact.bodyA
             body2 = contact.bodyB
@@ -163,12 +165,21 @@ extension SKScene_game_monster: SKPhysicsContactDelegate{
             body2 = contact.bodyA
         }
         
-        if ((body1.categoryBitMask & SKScene_game_monster_physicsCategory.monster != 0) &&
-                (body2.categoryBitMask & SKScene_game_monster_physicsCategory.projectile != 0)) {
-            if let monster = body1.node as? SKSpriteNode,
-               let projectile = body2.node as? SKSpriteNode {
+        let check1 = body1.categoryBitMask & SKScene_game_monster_physicsCategory.projectile
+        let check2 = body2.categoryBitMask & SKScene_game_monster_physicsCategory.monster
+        if check1 != 0 && check2 != 0{
+            if let monster = body1.node as? SKSpriteNode, let projectile = body2.node as? SKSpriteNode {
                 projectileDidCollideWithMonster(projectile: projectile, monster: monster)
             }
         }
     }
 }
+
+/*
+ SKPhysicsContact：
+ open var bodyA: SKPhysicsBody { get }， 联系中的第一个物体
+ open var bodyB: SKPhysicsBody { get }， 联系中的第二个物体
+ open var contactPoint: CGPoint { get }， 两个物体在场景坐标系中的联系点
+ open var contactNormal: CGVector { get }，
+ open var collisionImpulse: CGFloat { get }， 两个物体的碰撞强度，牛顿每秒
+ */
