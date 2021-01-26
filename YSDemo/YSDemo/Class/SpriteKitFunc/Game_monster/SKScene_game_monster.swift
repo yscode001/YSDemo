@@ -96,16 +96,16 @@ class SKScene_game_monster: SKScene {
         ))
     }
     
-    func random() -> CGFloat {
-        return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
-    }
-    
-    func random(min: CGFloat, max: CGFloat) -> CGFloat {
-        return random() * (max - min) + min
+    private func random(min: CGFloat, max: CGFloat) -> CGFloat {
+        var scale = CGFloat(arc4random() % 10) * CGFloat(0.1)
+        if scale < 0.1{
+            scale = 0.1
+        }
+        return min + (max - min) * scale
     }
     
     /// 添加怪兽
-    func addMonster() {
+    private func addMonster() {
         let monster = SKSpriteNode(imageNamed: "sk_monster")
         monster.physicsBody = SKPhysicsBody(rectangleOf: monster.size)
         monster.physicsBody?.isDynamic = true
