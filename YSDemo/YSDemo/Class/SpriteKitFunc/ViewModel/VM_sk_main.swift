@@ -15,6 +15,9 @@ class VM_sk_main {
         ]),
         SectionModel(model: "SKPhysics", items: [
             M_sk_main(identifier: "id2-1", title: "物理世界")
+        ]),
+        SectionModel(model: "Game", items: [
+            M_sk_main(identifier: "id3-1", title: "打怪兽")
         ])
     ])
 }
