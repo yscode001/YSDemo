@@ -19,8 +19,9 @@ class VM_sk_main {
         SectionModel(model: "Game", items: [
             M_sk_main(identifier: "id3-1", title: "打怪兽")
         ]),
-        SectionModel(model: "Camera", items: [
-            M_sk_main(identifier: "id4-1", title: "相机")
-        ]),
+        SectionModel(model: "Node节点", items: [
+            M_sk_main(identifier: "id4-1", title: "相机"),
+            M_sk_main(identifier: "id4-2", title: "光照")
+        ])
     ])
 }

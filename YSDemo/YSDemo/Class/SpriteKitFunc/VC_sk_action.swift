@@ -44,7 +44,6 @@ class VC_sk_action: VC_base {
          resizeFill：此模式可以保证场景与视图的尺寸相匹配
          */
         scene?.scaleMode = .aspectFill
-        
         scene?.backgroundColor = Color.background
         scene?.size = skFrame.size
         skV.presentScene(scene)

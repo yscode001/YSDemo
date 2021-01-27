@@ -31,6 +31,7 @@
 		3125F58B25BC239400F677AE /* sk_biu.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3125F58925BC239300F677AE /* sk_biu.caf */; };
 		3125F58C25BC239400F677AE /* sk_bg.caf in Resources */ = {isa = PBXBuildFile; fileRef = 3125F58A25BC239400F677AE /* sk_bg.caf */; };
 		3125F59025BC23B300F677AE /* plane.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3125F58F25BC23B300F677AE /* plane.atlas */; };
+		3140CBC625C11AEE006B4F5B /* SKScene_light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3140CBC525C11AEE006B4F5B /* SKScene_light.swift */; };
 		3142BFD925BE669900E340D8 /* M_sk_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3142BFD825BE669900E340D8 /* M_sk_main.swift */; };
 		314CFE0A25BED49A00120774 /* SKScene_transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314CFE0925BED49A00120774 /* SKScene_transition.swift */; };
 		315AFE3E25BC339D007A8E63 /* VC_mv_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315AFE3D25BC339D007A8E63 /* VC_mv_main.swift */; };
@@ -47,7 +48,6 @@
 		318BCDCA25BBFFD400E61A70 /* VC_login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCDC925BBFFD400E61A70 /* VC_login.swift */; };
 		318BCDEB25BC009100E61A70 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCDEA25BC009100E61A70 /* Color.swift */; };
 		318BCDF125BC02E200E61A70 /* Tool_print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCDF025BC02E200E61A70 /* Tool_print.swift */; };
-		318FCD0825C0544A009B1122 /* SKScene_flybird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318FCD0725C0544A009B1122 /* SKScene_flybird.swift */; };
 		318FCD0C25C05640009B1122 /* SKScene_camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318FCD0B25C05640009B1122 /* SKScene_camera.swift */; };
 		31A92FEF25BC3468003AC351 /* VM_uk_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A92FEE25BC3468003AC351 /* VM_uk_main.swift */; };
 		31A92FF425BC3490003AC351 /* M_uk_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A92FF325BC3490003AC351 /* M_uk_main.swift */; };
@@ -94,6 +94,7 @@
 		3125F58925BC239300F677AE /* sk_biu.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sk_biu.caf; sourceTree = "<group>"; };
 		3125F58A25BC239400F677AE /* sk_bg.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sk_bg.caf; sourceTree = "<group>"; };
 		3125F58F25BC23B300F677AE /* plane.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = plane.atlas; sourceTree = "<group>"; };
+		3140CBC525C11AEE006B4F5B /* SKScene_light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScene_light.swift; sourceTree = "<group>"; };
 		3142BFD825BE669900E340D8 /* M_sk_main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M_sk_main.swift; sourceTree = "<group>"; };
 		314CFE0925BED49A00120774 /* SKScene_transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScene_transition.swift; sourceTree = "<group>"; };
 		315AFE3D25BC339D007A8E63 /* VC_mv_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC_mv_main.swift; sourceTree = "<group>"; };
@@ -116,7 +117,6 @@
 		318C3D0525BFE26D00DEDB79 /* SKPhysicsWorldDesc.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SKPhysicsWorldDesc.md; sourceTree = "<group>"; };
 		318C3D0625BFE27F00DEDB79 /* SKPhysicsBodyDesc.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SKPhysicsBodyDesc.md; sourceTree = "<group>"; };
 		318C3D0825BFE6A600DEDB79 /* SKPhysicsJointDesc.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SKPhysicsJointDesc.md; sourceTree = "<group>"; };
-		318FCD0725C0544A009B1122 /* SKScene_flybird.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScene_flybird.swift; sourceTree = "<group>"; };
 		318FCD0B25C05640009B1122 /* SKScene_camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScene_camera.swift; sourceTree = "<group>"; };
 		31A92FEE25BC3468003AC351 /* VM_uk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VM_uk_main.swift; sourceTree = "<group>"; };
 		31A92FF325BC3490003AC351 /* M_uk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M_uk_main.swift; sourceTree = "<group>"; };
@@ -416,7 +416,6 @@
 				31F2283C25BDA2460034FD11 /* VC_sk_action.swift */,
 				318BCDBC25BBFF0400E61A70 /* VC_sk_main.swift */,
 				31013BD125BD711A007434B9 /* Cell */,
-				318FCD0625C0542F009B1122 /* Game_flyBird */,
 				31BCDEF325BFB99C004D611C /* Game_monster */,
 				3142BFD725BE668000E340D8 /* Model */,
 				31BCDEF125BFB839004D611C /* Physics */,
@@ -471,14 +470,6 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		318FCD0625C0542F009B1122 /* Game_flyBird */ = {
-			isa = PBXGroup;
-			children = (
-				318FCD0725C0544A009B1122 /* SKScene_flybird.swift */,
-			);
-			path = Game_flyBird;
-			sourceTree = "<group>";
-		};
 		31A92FED25BC345C003AC351 /* VM */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +522,7 @@
 				31F2284425BDA3150034FD11 /* SKScene_textureAtlas.swift */,
 				314CFE0925BED49A00120774 /* SKScene_transition.swift */,
 				318FCD0B25C05640009B1122 /* SKScene_camera.swift */,
+				3140CBC525C11AEE006B4F5B /* SKScene_light.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -661,6 +653,7 @@
 				318BCDF125BC02E200E61A70 /* Tool_print.swift in Sources */,
 				3125F54625BC1ECD00F677AE /* UILabel+font.swift in Sources */,
 				31013BCC25BD6DE3007434B9 /* VC_uk_physics_gravicy.swift in Sources */,
+				3140CBC625C11AEE006B4F5B /* SKScene_light.swift in Sources */,
 				31BCDEFD25BFBC34004D611C /* SKScene_game_monster_helper.swift in Sources */,
 				31F2284525BDA3150034FD11 /* SKScene_textureAtlas.swift in Sources */,
 				318BCDC025BBFF0E00E61A70 /* VC_scn_main.swift in Sources */,
@@ -696,7 +689,6 @@
 				31F2282E25BD9BBC0034FD11 /* VC_uk_physics_attachment.swift in Sources */,
 				31BCDEF525BFB9C9004D611C /* SKScene_game_monster.swift in Sources */,
 				31A92FF425BC3490003AC351 /* M_uk_main.swift in Sources */,
-				318FCD0825C0544A009B1122 /* SKScene_flybird.swift in Sources */,
 				31F2283D25BDA2460034FD11 /* VC_sk_action.swift in Sources */,
 				318BCD9125BBF31100E61A70 /* TabC.swift in Sources */,
 				31013BDE25BD7DFD007434B9 /* VC_uk_physics_snap.swift in Sources */,
