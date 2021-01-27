@@ -53,6 +53,8 @@ class VC_sk_main: VC_base {
                 self.ys.push(VC_sk_action(scene: SKScene_camera()), animated: true)
             case "id4-2":
                 self.ys.push(VC_sk_action(scene: SKScene_light()), animated: true)
+            case "id4-3":
+                self.ys.push(VC_sk_action(scene: SKScene_emitter()), animated: true)
             default:
                 break
             }

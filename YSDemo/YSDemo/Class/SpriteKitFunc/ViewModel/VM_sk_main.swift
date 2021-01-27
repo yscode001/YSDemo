@@ -21,7 +21,8 @@ class VM_sk_main {
         ]),
         SectionModel(model: "Node节点", items: [
             M_sk_main(identifier: "id4-1", title: "相机"),
-            M_sk_main(identifier: "id4-2", title: "光照")
+            M_sk_main(identifier: "id4-2", title: "光照"),
+            M_sk_main(identifier: "id4-3", title: "粒子"),
         ])
     ])
 }
