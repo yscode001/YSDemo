@@ -23,6 +23,7 @@ class VM_sk_main {
             M_sk_main(identifier: "id4-1", title: "相机"),
             M_sk_main(identifier: "id4-2", title: "光照"),
             M_sk_main(identifier: "id4-3", title: "粒子"),
+            M_sk_main(identifier: "id4-4", title: "瓦片")
         ])
     ])
 }
