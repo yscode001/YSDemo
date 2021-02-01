@@ -10,6 +10,7 @@ target 'YSDemo' do
   pod 'MJRefresh', '3.5.0'
   pod 'SVProgressHUD', '2.2.5'
   pod 'SwiftyJSON', '5.0.0'
+  pod 'lottie-ios', '3.1.9'
   
   # 网络传输
   pod 'Alamofire', '5.4.1'

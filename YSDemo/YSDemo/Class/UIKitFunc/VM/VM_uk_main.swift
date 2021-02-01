@@ -19,6 +19,9 @@ class VM_uk_main {
         ]),
         SectionModel(model: "遮罩", items: [
             M_uk_main(identifier: "id2-1", title: "找美女")
+        ]),
+        SectionModel(model: "Lottie", items: [
+            M_uk_main(identifier: "id3-1", title: "lottie动画")
         ])
     ])
 }
