@@ -10,10 +10,12 @@ import Lottie
 /// lottie动画
 class VC_uk_lottie: VC_base {
     
-    private lazy var aniV:AnimationView = AnimationView(filePath: Bundle.main.path(forResource: "lottie-demo1", ofType: "json")!)
+    private lazy var aniV:AnimationView = AnimationView(filePath: Bundle.main.path(forResource: "lottie-demo2", ofType: "json")!)
     
     override func viewDidLoad(firstTime: Bool) {
         super.viewDidLoad(firstTime: firstTime)
+        
+        aniV.loopMode = .repeat(100)
         view.addSubview(aniV)
         aniV.snp.makeConstraints { (make) in
             make.center.equalTo(view)

@@ -53,6 +53,7 @@
 		318BCDF125BC02E200E61A70 /* Tool_print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCDF025BC02E200E61A70 /* Tool_print.swift */; };
 		318BF18F25C2A87B009DA518 /* SKScene_tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BF18E25C2A87B009DA518 /* SKScene_tile.swift */; };
 		318FCD0C25C05640009B1122 /* SKScene_camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318FCD0B25C05640009B1122 /* SKScene_camera.swift */; };
+		31A52E0125C7F71200C64A6C /* lottie-demo2.json in Resources */ = {isa = PBXBuildFile; fileRef = 31A52E0025C7F71200C64A6C /* lottie-demo2.json */; };
 		31A92FEF25BC3468003AC351 /* VM_uk_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A92FEE25BC3468003AC351 /* VM_uk_main.swift */; };
 		31A92FF425BC3490003AC351 /* M_uk_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A92FF325BC3490003AC351 /* M_uk_main.swift */; };
 		31A92FFA25BC357B003AC351 /* Cell_uk_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A92FF925BC357B003AC351 /* Cell_uk_main.swift */; };
@@ -129,6 +130,7 @@
 		318C3D0625BFE27F00DEDB79 /* SKPhysicsBodyDesc.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SKPhysicsBodyDesc.md; sourceTree = "<group>"; };
 		318C3D0825BFE6A600DEDB79 /* SKPhysicsJointDesc.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SKPhysicsJointDesc.md; sourceTree = "<group>"; };
 		318FCD0B25C05640009B1122 /* SKScene_camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScene_camera.swift; sourceTree = "<group>"; };
+		31A52E0025C7F71200C64A6C /* lottie-demo2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-demo2.json"; sourceTree = "<group>"; };
 		31A92FEE25BC3468003AC351 /* VM_uk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VM_uk_main.swift; sourceTree = "<group>"; };
 		31A92FF325BC3490003AC351 /* M_uk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M_uk_main.swift; sourceTree = "<group>"; };
 		31A92FF925BC357B003AC351 /* Cell_uk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell_uk_main.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 		313F1AEA25C7F31600570138 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				31A52E0025C7F71200C64A6C /* lottie-demo2.json */,
 				3184349025C7F5BF006006A7 /* lottie-demo1.json */,
 				313F1AEB25C7F32500570138 /* lottie-demo.json */,
 			);
@@ -620,6 +623,7 @@
 				3184349125C7F5BF006006A7 /* lottie-demo1.json in Resources */,
 				318BCD7525BBF26800E61A70 /* Assets.xcassets in Resources */,
 				31BF36E925C1A1DA0055C8FF /* Assets.xcassets in Resources */,
+				31A52E0125C7F71200C64A6C /* lottie-demo2.json in Resources */,
 				3125F58425BC230000F677AE /* login_bg.jpeg in Resources */,
 				3125F57F25BC22D900F677AE /* mask_bg.png in Resources */,
 				3125F58B25BC239400F677AE /* sk_biu.caf in Resources */,
