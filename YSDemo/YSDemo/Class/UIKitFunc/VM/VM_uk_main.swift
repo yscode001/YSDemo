@@ -22,6 +22,9 @@ class VM_uk_main {
         ]),
         SectionModel(model: "Lottie", items: [
             M_uk_main(identifier: "id3-1", title: "lottie动画")
+        ]),
+        SectionModel(model: "Present", items: [
+            M_uk_main(identifier: "id4-1", title: "连续present测试")
         ])
     ])
 }

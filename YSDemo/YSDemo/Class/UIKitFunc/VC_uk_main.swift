@@ -53,6 +53,8 @@ class VC_uk_main: VC_base {
                 self.ys.push(VC_uk_mask_findGirl(), animated: true)
             case "id3-1":
                 self.ys.push(VC_uk_lottie(), animated: true)
+            case "id4-1":
+                self.ys.push(VC_uk_present(), animated: true)
             default:
                 break
             }
