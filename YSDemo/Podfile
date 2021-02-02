@@ -8,8 +8,13 @@ target 'YSDemo' do
   pod 'SDWebImage', '5.10.2'
   pod 'SnapKit', '5.0.1'
   pod 'MJRefresh', '3.5.0'
-  pod 'SVProgressHUD', '2.2.5'
   pod 'SwiftyJSON', '5.0.0'
+
+  # 提示
+  pod 'SVProgressHUD', '2.2.5'
+  pod 'Toast-Swift', '5.0.1'
+  
+  # 动画库
   pod 'lottie-ios', '3.1.9'
   
   # 网络传输

@@ -25,6 +25,9 @@ class VM_uk_main {
         ]),
         SectionModel(model: "Present", items: [
             M_uk_main(identifier: "id4-1", title: "连续present测试")
+        ]),
+        SectionModel(model: "Toast-Swift", items: [
+            M_uk_main(identifier: "id5-1", title: "Toast-Swift练习")
         ])
     ])
 }

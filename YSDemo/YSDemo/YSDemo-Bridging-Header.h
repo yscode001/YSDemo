@@ -8,6 +8,7 @@
 // 常用三方库
 @import SnapKit;
 @import SwiftyJSON;
+@import Toast_Swift;
 
 // Rx
 @import RxSwift;
