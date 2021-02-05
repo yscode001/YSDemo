@@ -54,6 +54,7 @@
 		318BCDF125BC02E200E61A70 /* Tool_print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCDF025BC02E200E61A70 /* Tool_print.swift */; };
 		318BF18F25C2A87B009DA518 /* SKScene_tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BF18E25C2A87B009DA518 /* SKScene_tile.swift */; };
 		318FCD0C25C05640009B1122 /* SKScene_camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318FCD0B25C05640009B1122 /* SKScene_camera.swift */; };
+		319D5AE825CC088100997AEB /* NetworkManager+AFDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319D5AE725CC088100997AEB /* NetworkManager+AFDemo.swift */; };
 		31A52E0125C7F71200C64A6C /* lottie-demo2.json in Resources */ = {isa = PBXBuildFile; fileRef = 31A52E0025C7F71200C64A6C /* lottie-demo2.json */; };
 		31A92FEF25BC3468003AC351 /* VM_uk_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A92FEE25BC3468003AC351 /* VM_uk_main.swift */; };
 		31A92FF425BC3490003AC351 /* M_uk_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A92FF325BC3490003AC351 /* M_uk_main.swift */; };
@@ -133,6 +134,7 @@
 		318C3D0625BFE27F00DEDB79 /* SKPhysicsBodyDesc.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SKPhysicsBodyDesc.md; sourceTree = "<group>"; };
 		318C3D0825BFE6A600DEDB79 /* SKPhysicsJointDesc.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SKPhysicsJointDesc.md; sourceTree = "<group>"; };
 		318FCD0B25C05640009B1122 /* SKScene_camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScene_camera.swift; sourceTree = "<group>"; };
+		319D5AE725CC088100997AEB /* NetworkManager+AFDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+AFDemo.swift"; sourceTree = "<group>"; };
 		31A52E0025C7F71200C64A6C /* lottie-demo2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lottie-demo2.json"; sourceTree = "<group>"; };
 		31A92FEE25BC3468003AC351 /* VM_uk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VM_uk_main.swift; sourceTree = "<group>"; };
 		31A92FF325BC3490003AC351 /* M_uk_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M_uk_main.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				3125F53A25BC1ECD00F677AE /* NetworkManager.swift */,
+				319D5AE725CC088100997AEB /* NetworkManager+AFDemo.swift */,
 				3125F53B25BC1ECD00F677AE /* NetworkHelper */,
 			);
 			path = Http;
@@ -725,6 +728,7 @@
 				31F2284225BDA3080034FD11 /* SKScene_position.swift in Sources */,
 				3125F54A25BC1ECD00F677AE /* NetworkHelper.swift in Sources */,
 				31013BD725BD7132007434B9 /* VM_sk_main.swift in Sources */,
+				319D5AE825CC088100997AEB /* NetworkManager+AFDemo.swift in Sources */,
 				3125F54B25BC1ECD00F677AE /* NetworkBaseUrl.swift in Sources */,
 				315AFE3E25BC339D007A8E63 /* VC_mv_main.swift in Sources */,
 				318BCDEB25BC009100E61A70 /* Color.swift in Sources */,
