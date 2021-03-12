@@ -1,15 +1,15 @@
 //
 //  CoreDataManager.swift
-//  TCIosBaseProject
+//  YSKit
 //
-//  Created by 姚帅 on 2020/12/4.
+//  Created by 姚帅 on 2021/3/11.
 //
 
 import Foundation
 import CoreData
 
-/// CoreData工具类
-public class CoreDataManager: YSCoreProtocol{
+/// CoreData管理器
+public class CoreDataManager{
     
     /// 私有化构造函数
     private init(){}
@@ -18,73 +18,112 @@ public class CoreDataManager: YSCoreProtocol{
     public static let shared:CoreDataManager = CoreDataManager()
     
     /// 数据库文件名字
-    fileprivate lazy var dbFileName:String = "cn.ys.yskit"
+    private lazy var dbFileName:String = "cn.ys.coredata.db"
     
-    /// 持久化容器
-    private lazy var persistentContainer:NSPersistentContainer = {
-        let model = NSManagedObjectModel.mergedModel(from: nil) ?? NSManagedObjectModel()
-        let container = NSPersistentContainer(name: self.dbFileName, managedObjectModel: model)
-        container.loadPersistentStores(completionHandler: { (_, error) in
-            if let err = error{
-                print(String(format: "CoreData 打开／新建数据库出现错误：%@", arguments: [err.localizedDescription]))
-            }
-        })
-        return container
-    }()
+    // MARK: - CoreDataStack
     
-    // MARK: - 3个上下文提交数据顺序：operateContext -> mainContext -> saveingContext
+    // MARK: - 持久化存储调度器
+    private var _psc:NSPersistentStoreCoordinator?
+    private var psc:NSPersistentStoreCoordinator?{
+        if _psc != nil{
+            return _psc
+        }
+        objc_sync_enter(self)
+        // 使用所有的管理对象模型
+        guard let mom = NSManagedObjectModel.mergedModel(from: nil) else {
+            objc_sync_exit(self)
+            return nil
+        }
+        // 数据库文件存储路径
+        guard let cacheDir = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last else {
+            objc_sync_exit(self)
+            return nil
+        }
+        let dbPath = (cacheDir as NSString).appendingPathComponent(dbFileName) as String
+        guard let dbURL = URL(string: dbPath) else {
+            objc_sync_exit(self)
+            return nil
+        }
+        do{
+            // 初始化"持久化存储协调器"
+            _psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
+            // 添加持久化存储，使用Sqlite进行存储，并且自动合并修改的表结构以及数据库结构
+            let opt = [NSMigratePersistentStoresAutomaticallyOption: true, NSInferMappingModelAutomaticallyOption: true]
+            try _psc?.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: dbURL, options: opt)
+        }
+        catch{
+            _psc = nil
+        }
+        objc_sync_exit(self)
+        return _psc
+    }
     
-    /// 操作对象上下文privateQueueConcurrencyType
-    public private(set) lazy var operateContext:NSManagedObjectContext = {
-        let context = self.persistentContainer.newBackgroundContext()
-        context.parent = self.mainContext
-        return context
-    }()
+    // MARK: - 管理对象上下文
+    private var _saveingMoc:NSManagedObjectContext?
+    private var saveingMoc:NSManagedObjectContext?{
+        if let moc = _saveingMoc{
+            return moc
+        }
+        guard let ps = psc else {
+            return nil
+        }
+        _saveingMoc = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        _saveingMoc?.persistentStoreCoordinator = ps
+        return _saveingMoc
+    }
     
-    /// 管理对象上下文mainQueueConcurrencyType
-    public private(set) lazy var mainContext:NSManagedObjectContext = {
-        let context = self.persistentContainer.viewContext
-        context.parent = self.saveingContext
-        return context
-    }()
+    private var _mainMoc:NSManagedObjectContext?
     
-    /// 保存对象上下文privateQueueConcurrencyType
-    fileprivate lazy var saveingContext:NSManagedObjectContext = self.persistentContainer.newBackgroundContext()
+    /// 主队列moc，parent是一个拥有psc的私有队列moc
+    public  var mainMoc:NSManagedObjectContext?{
+        if let moc = _mainMoc{
+            return moc
+        }
+        guard let saveMoc = saveingMoc else{
+            return nil
+        }
+        _mainMoc = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        _mainMoc?.parent = saveMoc
+        return _mainMoc
+    }
+    
+    private var _backgroundMoc:NSManagedObjectContext?
+    
+    /// 私有队列moc，parent为mainMoc
+    public var backgroundMoc:NSManagedObjectContext?{
+        if let moc = _backgroundMoc{
+            return moc
+        }
+        guard let maiMoc = mainMoc else {
+            return nil
+        }
+        _backgroundMoc = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        _backgroundMoc?.parent = maiMoc
+        return _backgroundMoc
+    }
 }
 
 // MARK: - 持久化
-public extension YSOriginalObjectProtocol where OriginalObjectType == CoreDataManager{
+extension CoreDataManager{
     
-    /// 应用启动后注册数据库文件名称
-    func registerAfterLaunching(dbFileName: String){
-        if dbFileName.ys.isEmptyOrWhiteSpace{
+    private func innerSave(moc: NSManagedObjectContext){
+        if !moc.hasChanges{
+            print("CoreData 管理对象上下文 没有变化，不需要持久化")
             return
         }
-        originalObject.dbFileName = dbFileName
-    }
-    
-    /// 保存
-    func save(_ context: NSManagedObjectContext) {
-        if context != originalObject.operateContext && context != originalObject.mainContext && context != originalObject.saveingContext{
-            print("CoreData 上下文使用错误，不能保存数据")
-            return
-        }
-        if !context.hasChanges{
-            print("CoreData context 没有变化，不用持久化")
-            return
-        }
-        context.perform({
-            if let parentContent = context.parent{ // 有上级context，接着提交
+        moc.perform({
+            // 异步执行保存操作
+            if let parentMoc = moc.parent{ // 有parentMoc，接着提交
                 do {
-                    try context.save()
-                    self.save(parentContent)
+                    try moc.save()
+                    self.innerSave(moc: parentMoc)
                 } catch {
                     print(String(format: "CoreData 数据保存失败：%@", arguments: [error.localizedDescription]))
                 }
-            } else{ // 自己就是顶级context，加锁持久化
+            } else{ // 自己是rootMoc，加锁持久化(其实Apple已经使用psc加过锁了，这里只是为了更保险一些)
                 objc_sync_enter(self)
                 do {
-                    try context.save()
+                    try moc.save()
                 } catch {
                     print(String(format: "CoreData 数据保存失败：%@", arguments: [error.localizedDescription]))
                 }
@@ -93,8 +132,26 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == CoreDataMa
         })
     }
     
+    /// 持久化
+    /// - Parameter mainMoc: 使用mainMoc或者backgroundMoc进行持久化
+    public func save(isMainMoc: Bool){
+        guard let moc = (isMainMoc ? mainMoc : backgroundMoc) else{
+            print("CoreData 管理对象上下文不存在，不能保存数据")
+            return
+        }
+        innerSave(moc: moc)
+    }
+}
+
+// MARK: - 回滚
+extension CoreDataManager{
+    
     /// 回滚
-    func roolback(_ context: NSManagedObjectContext){
-        context.rollback()
+    public func roolback(isMainMoc: Bool){
+        guard let moc = (isMainMoc ? mainMoc : backgroundMoc) else{
+            print("CoreData 管理对象上下文不存在，不能回滚")
+            return
+        }
+        moc.rollback()
     }
 }

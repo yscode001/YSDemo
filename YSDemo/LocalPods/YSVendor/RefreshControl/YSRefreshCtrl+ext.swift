@@ -93,8 +93,13 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == YSRefreshC
 // MARK: - 设置标题
 public extension YSOriginalObjectProtocol where OriginalObjectType == YSRefreshCtrl{
     
-    /// 设置标题
+    /// 设置标题属性
     func setupData(title: YSRefreshTitleInfo){
         originalObject.setupData(title: title)
+    }
+    
+    /// 设置标题样式
+    func setupData(style: YSRefreshStyle){
+        originalObject.setupData(style: style)
     }
 }

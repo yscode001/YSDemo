@@ -1,5 +1,6 @@
 // 系统常用库
 @import Foundation;
+@import CoreData;
 @import UIKit;
 @import WebKit;
 @import SpriteKit;

@@ -7,6 +7,38 @@
 
 import Foundation
 
+/// 刷新控件样式信息
+public struct YSRefreshStyle{
+    
+    /// 下拉刷新文本字体
+    public var pulldown_font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+    
+    /// 下拉刷新文本颜色
+    public var pulldown_titleColor = UIColor.gray
+    
+    /// 上拉加载文本字体
+    public var pullup_font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+    
+    /// 上拉加载文本颜色
+    public var pullup_titleColor = UIColor.gray
+    
+    public init() {}
+    
+    /// 只有下拉刷新
+    public init(pulldown_font: UIFont, pulldown_titleColor: UIColor){
+        self.pulldown_font = pulldown_font
+        self.pulldown_titleColor = pulldown_titleColor
+    }
+    
+    /// 下拉刷新和上拉加载
+    public init(pulldown_font: UIFont, pulldown_titleColor: UIColor, pullup_font: UIFont, pullup_titleColor: UIColor){
+        self.pulldown_font = pulldown_font
+        self.pulldown_titleColor = pulldown_titleColor
+        self.pullup_font = pullup_font
+        self.pullup_titleColor = pullup_titleColor
+    }
+}
+
 /// 刷新控件标题信息
 public struct YSRefreshTitleInfo {
     

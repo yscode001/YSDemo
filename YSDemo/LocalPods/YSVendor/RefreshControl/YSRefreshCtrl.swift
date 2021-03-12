@@ -38,7 +38,7 @@ public class YSRefreshCtrl: YSCoreProtocol{
         self.setupData(title: YSRefreshTitleInfo())
     }
     
-    /// 设置刷新控件的显示属性
+    /// 设置刷新控件的标题属性
     internal func setupData(title: YSRefreshTitleInfo){
         pulldownV.setTitle(title.pulldown_idle, for: .idle)
         pulldownV.setTitle(title.pulldown_pulling, for: .pulling)
@@ -51,6 +51,19 @@ public class YSRefreshCtrl: YSCoreProtocol{
             pullupV.setTitle(title.pullup_willRefresh, for: .willRefresh)
             pullupV.setTitle(title.pullup_refreshing, for: .refreshing)
             pullupV.setTitle(title.pullup_noMore, for: .noMoreData)
+        }
+    }
+    
+    /// 设置刷新控件的标题样色
+    internal func setupData(style: YSRefreshStyle){
+        pulldownV.lastUpdatedTimeLabel?.font = style.pulldown_font
+        pulldownV.lastUpdatedTimeLabel?.textColor = style.pulldown_titleColor
+        pulldownV.stateLabel?.font = style.pulldown_font
+        pulldownV.stateLabel?.textColor = style.pulldown_titleColor
+        
+        if settedPullUpV{
+            pullupV.stateLabel?.font = style.pullup_font
+            pullupV.stateLabel?.textColor = style.pullup_titleColor
         }
     }
 }

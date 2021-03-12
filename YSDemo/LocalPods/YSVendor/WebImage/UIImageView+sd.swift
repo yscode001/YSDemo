@@ -84,39 +84,29 @@ private extension YSOriginalObjectProtocol where OriginalObjectType:UIImageView{
 // MARK: - 利用三方库(SD)显示图片，并切圆角
 public extension YSOriginalObjectProtocol where OriginalObjectType: UIImageView{
     
-    /// 获取圆角值
-    /// - Parameter radius: 圆角值(如果值为空，为控件宽高值最小的一半)
-    /// - Returns: 返回圆角值
-    private func getRadius(radius: CGFloat?) -> CGFloat{
-        if let rad = radius{
-            return rad
-        } else{
-            return min(originalObject.bounds.width, originalObject.bounds.height) * 0.5
-        }
-    }
-    
     /// 显示图片(自带切圆角)
     /// - Parameters:
     ///   - url: 图片地址
     ///   - ph: 占位图片
-    ///   - radius: 圆角(如果值为空，为控件宽高值最小的一半)
-    func setImage(_ url: String?, ph: UIImage?, radius: CGFloat?){
+    ///   - size: 图片控件的尺寸
+    ///   - radius: 圆角值
+    func setImage(_ url: String?, ph: UIImage?, size: CGSize, radius: CGFloat){
         guard let urlStr = url, let requestURL = URL(string: urlStr) else {
-            originalObject.image = ph?.sd_resizedImage(with: originalObject.bounds.size, scaleMode: transformContentModel)?.sd_roundedCornerImage(withRadius: getRadius(radius: radius), corners: .allCorners, borderWidth: 0, borderColor: nil)
+            originalObject.image = ph?.sd_resizedImage(with: size, scaleMode: transformContentModel)?.sd_roundedCornerImage(withRadius: radius, corners: .allCorners, borderWidth: 0, borderColor: nil)
             return
         }
-        if let img = SDImageCache.shared.imageFromCache(forKey: radiusCopySaveKey(url: url, radius: getRadius(radius: radius))){
+        if let img = SDImageCache.shared.imageFromCache(forKey: radiusCopySaveKey(url: url, radius: radius)){
             originalObject.image = img
             return
         }
         originalObject.sd_setImage(with: requestURL, placeholderImage: ph, options: .avoidDecodeImage, progress: nil) { [weak originalObject]  (originalImage, _, _, _) in
             guard let `originalObject` = originalObject else{ return }
             if let originalImg = originalImage{
-                let transormImg = originalImg.sd_resizedImage(with: originalObject.bounds.size, scaleMode: self.transformContentModel)?.sd_roundedCornerImage(withRadius: self.getRadius(radius: radius), corners: .allCorners, borderWidth: 0, borderColor: nil)
+                let transormImg = originalImg.sd_resizedImage(with: size, scaleMode: self.transformContentModel)?.sd_roundedCornerImage(withRadius: radius, corners: .allCorners, borderWidth: 0, borderColor: nil)
                 originalObject.image = transormImg
-                SDImageCache.shared.store(transormImg, forKey: self.radiusCopySaveKey(url: url, radius: self.getRadius(radius: radius)), completion: nil)
+                SDImageCache.shared.store(transormImg, forKey: self.radiusCopySaveKey(url: url, radius: radius), completion: nil)
             } else{
-                originalObject.image = ph?.sd_resizedImage(with: originalObject.bounds.size, scaleMode: self.transformContentModel)?.sd_roundedCornerImage(withRadius: self.getRadius(radius: radius), corners: .allCorners, borderWidth: 0, borderColor: nil)
+                originalObject.image = ph?.sd_resizedImage(with: size, scaleMode: self.transformContentModel)?.sd_roundedCornerImage(withRadius: radius, corners: .allCorners, borderWidth: 0, borderColor: nil)
             }
         }
     }
@@ -125,10 +115,11 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIImageView{
     /// - Parameters:
     ///   - url: 图片地址
     ///   - phName: 占位图片
-    ///   - radius: 圆角(如果值为空，为控件宽高值最小的一半)
-    func setImage(_ url: String?, phName: String?, radius: CGFloat?){
+    ///   - size: 图片控件的尺寸
+    ///   - radius: 圆角值
+    func setImage(_ url: String?, phName: String?, size: CGSize, radius: CGFloat){
         let phImage = UIImage(named: phName ?? "")
-        setImage(url, ph: phImage, radius: radius)
+        setImage(url, ph: phImage, size: size, radius: radius)
     }
 }
 
@@ -139,26 +130,27 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIImageView{
     /// - Parameters:
     ///   - url: 图片地址
     ///   - ph: 占位图片
-    ///   - radius: 圆角(如果值为空，为控件宽高值最小的一半)
+    ///   - size: 图片控件的尺寸
+    ///   - radius: 圆角值
     ///   - borderWidth: 边框宽度
     ///   - borderColor: 边框颜色
-    func setImage(_ url: String?, ph: UIImage?, radius: CGFloat?, borderWidth: CGFloat, borderColor: UIColor){
+    func setImage(_ url: String?, ph: UIImage?, size: CGSize, radius: CGFloat, borderWidth: CGFloat, borderColor: UIColor){
         guard let urlStr = url, let requestURL = URL(string: urlStr) else {
-            originalObject.image = ph?.sd_resizedImage(with: originalObject.bounds.size, scaleMode: transformContentModel)?.sd_roundedCornerImage(withRadius: getRadius(radius: radius), corners: .allCorners, borderWidth: borderWidth, borderColor: borderColor)
+            originalObject.image = ph?.sd_resizedImage(with: size, scaleMode: transformContentModel)?.sd_roundedCornerImage(withRadius: radius, corners: .allCorners, borderWidth: borderWidth, borderColor: borderColor)
             return
         }
-        if let img = SDImageCache.shared.imageFromCache(forKey: radiusCopySaveKey(url: url, radius: getRadius(radius: radius))){
+        if let img = SDImageCache.shared.imageFromCache(forKey: radiusCopySaveKey(url: url, radius: radius)){
             originalObject.image = img
             return
         }
         originalObject.sd_setImage(with: requestURL, placeholderImage: ph, options: .avoidDecodeImage, progress: nil) { [weak originalObject]  (originalImage, _, _, _) in
             guard let `originalObject` = originalObject else{ return }
             if let originalImg = originalImage{
-                let transormImg = originalImg.sd_resizedImage(with: originalObject.bounds.size, scaleMode: self.transformContentModel)?.sd_roundedCornerImage(withRadius: self.getRadius(radius: radius), corners: .allCorners, borderWidth: borderWidth, borderColor: borderColor)
+                let transormImg = originalImg.sd_resizedImage(with: size, scaleMode: self.transformContentModel)?.sd_roundedCornerImage(withRadius: radius, corners: .allCorners, borderWidth: borderWidth, borderColor: borderColor)
                 originalObject.image = transormImg
-                SDImageCache.shared.store(transormImg, forKey: self.radiusCopySaveKey(url: url, radius: self.getRadius(radius: radius)), completion: nil)
+                SDImageCache.shared.store(transormImg, forKey: self.radiusCopySaveKey(url: url, radius: radius), completion: nil)
             } else{
-                originalObject.image = ph?.sd_resizedImage(with: originalObject.bounds.size, scaleMode: self.transformContentModel)?.sd_roundedCornerImage(withRadius: self.getRadius(radius: radius), corners: .allCorners, borderWidth: borderWidth, borderColor: borderColor)
+                originalObject.image = ph?.sd_resizedImage(with: size, scaleMode: self.transformContentModel)?.sd_roundedCornerImage(withRadius: radius, corners: .allCorners, borderWidth: borderWidth, borderColor: borderColor)
             }
         }
     }
@@ -167,12 +159,13 @@ public extension YSOriginalObjectProtocol where OriginalObjectType: UIImageView{
     /// - Parameters:
     ///   - url: 图片地址
     ///   - phName: 占位图片
-    ///   - radius: 圆角(如果值为空，为控件宽高值最小的一半)
+    ///   - size: 图片控件的尺寸
+    ///   - radius: 圆角值
     ///   - borderWidth: 边框宽度
     ///   - borderColor: 边框颜色
-    func setImage(_ url: String?, phName: String?, radius: CGFloat?, borderWidth: CGFloat, borderColor: UIColor){
+    func setImage(_ url: String?, phName: String?, size: CGSize, radius: CGFloat, borderWidth: CGFloat, borderColor: UIColor){
         let phImage = UIImage(named: phName ?? "")
-        setImage(url, ph: phImage, radius: radius, borderWidth: borderWidth, borderColor: borderColor)
+        setImage(url, ph: phImage, size: size, radius: radius, borderWidth: borderWidth, borderColor: borderColor)
     }
 }
 
