@@ -19,6 +19,12 @@ public class YSRefreshCtrl: YSCoreProtocol{
     /// 是否设置了上拉加载
     lazy var settedPullUpV:Bool = false
     
+    /// 下拉次数(结束下拉后才会加1)
+    lazy var pullDownTimes = 0
+    
+    /// 上拉次数(结束上拉后才会加1)
+    lazy var pullupTimes = 0
+    
     /// 下拉刷新、上拉加载控件
     lazy var pulldownV:MJRefreshNormalHeader = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(pullDownRefreshing))
     lazy var pullupV:MJRefreshBackNormalFooter = MJRefreshBackNormalFooter(refreshingTarget: self, refreshingAction: #selector(pullUpLoading))

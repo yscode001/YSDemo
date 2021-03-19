@@ -36,6 +36,16 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == YSRefreshC
     var isPullupRefreshing:Bool{
         return originalObject.pullupV.isRefreshing
     }
+    
+    /// 下拉次数(结束下拉后才会加1)
+    var pullDownTimes:Int{
+        return originalObject.pullDownTimes
+    }
+    
+    /// 上拉次数(结束上拉后才会加1)
+    var pullupTimes:Int{
+        return originalObject.pullupTimes
+    }
 }
 
 // MARK: - 设置给tableView
@@ -78,6 +88,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == YSRefreshC
     func endRefresh(pulldown: Bool, hasMore: Bool = false){
         if pulldown{
             originalObject.pulldownV.endRefreshing()
+            originalObject.pullDownTimes += 1
         } else{
             if originalObject.settedPullUpV{
                 if hasMore{
@@ -85,6 +96,7 @@ public extension YSOriginalObjectProtocol where OriginalObjectType == YSRefreshC
                 } else{
                     originalObject.pullupV.endRefreshingWithNoMoreData()
                 }
+                originalObject.pullupTimes += 1
             }
         }
     }
